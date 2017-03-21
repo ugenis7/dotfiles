@@ -18,6 +18,7 @@ sudo dnf install --nogpgcheck https://download1.rpmfusion.org/nonfree/fedora/rpm
 ```bash
 sudo dnf groupinstall 'Development Tools'
 sudo dnf groupinstall 'C Development Tools and Libraries'
+sudo dnf install git
 ```
 
 Fonts, themes and icons

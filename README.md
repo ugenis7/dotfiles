@@ -7,6 +7,25 @@ sudo visudo
 user            ALL=(ALL)       NOPASSWD: ALL
 sudo dnf update
 ```
+# Theme:
+
+MurrinaCandy
+Bruma (icons)
+Bluebird
+
+hotkeys:
+- web browser
+- email
+- calculator
+- keepassx
+- thunar
+- app-finder
+- Terminal
+- Maximize
+- Minimize
+- Move to other workspace
+- Show desktop
+
 
 # Enable RPM Fedora Fusion
 ```bash

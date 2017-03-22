@@ -9,9 +9,9 @@ sudo dnf update
 ```
 # Theme:
 
--MurrinaCandy
--Bruma (icons)
--Bluebird
+- MurrinaCandy
+- Bruma (icons)
+- Bluebird
 
 # Hotkeys:
 - web browser

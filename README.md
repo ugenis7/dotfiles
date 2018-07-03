@@ -1,36 +1,38 @@
-# Things to do to a fresh installation of Fedora 25
+# Things to do to a fresh installation of Fedora
+
 ## First things first
 ```bash
-sudo visudo
-## Same thing without a password
-# %wheel        ALL=(ALL)       NOPASSWD: ALL
-user            ALL=(ALL)       NOPASSWD: ALL
-sudo dnf update
+sudo dnf update --refresh
 ```
 # Theme:
+Apps: GNOME-PRO-LighterBlue-1.2
+Cursors: Capitaine-cursors
+Icons: Oxygen
 
-- MurrinaCandy
-- Bruma (icons)
-- Bluebird
+# Extensions:
+- AlternateTab
+- Pomodoro
+- Topicons plus
+- User themes
+
+# Fonts:
+Lora
 
 # Hotkeys:
-- web browser
-- email
-- calculator
-- keepassx
-- thunar
-- app-finder
-- Terminal
-- Maximize
-- Minimize
-- Move to other workspace
-- Show desktop
+- Firefox: Super + S
+- Thunderbird: Super + Q
+- Calculator: Super + C
+- Keepass: Super + z
+- Thunar: Super + F
+- Terminal: Super + T
+- Minimize: Super + Down
+- Show desktop: Super + D
 
 
 # Enable RPM Fedora Fusion
 ```bash
-sudo dnf install --nogpgcheck https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-25.noarch.rpm
-sudo dnf install --nogpgcheck https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-25.noarch.rpm
+sudo dnf install --nogpgcheck https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-28.noarch.rpm
+sudo dnf install --nogpgcheck https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-28.noarch.rpm
 ```
 
 # Install the C Development tools
@@ -41,7 +43,13 @@ sudo dnf install git
 ```
 # Install codecs
 ```bash
-sudo dnf install gstreamer-plugins-bad gstreamer-plugins-bad-free-extras gstreamer-plugins-bad-nonfree gstreamer-plugins-ugly gstreamer-ffmpeg gstreamer1-libav gstreamer1-plugins-bad-free-extras gstreamer1-plugins-bad-freeworld gstreamer1-plugins-base-tools gstreamer1-plugins-good-extras gstreamer1-plugins-ugly gstreamer1-plugins-bad-free gstreamer1-plugins-good gstreamer1-plugins-base gstreamer1
+sudo dnf install gstreamer-plugins-bad gstreamer-plugins-bad-free-extras \
+	gstreamer-plugins-bad-nonfree gstreamer-plugins-ugly gstreamer-ffmpeg \
+	gstreamer1-libav gstreamer1-plugins-bad-free-extras \
+	gstreamer1-plugins-bad-freeworld gstreamer1-plugins-base-tools \
+	gstreamer1-plugins-good-extras gstreamer1-plugins-ugly \
+	gstreamer1-plugins-bad-free gstreamer1-plugins-good \
+	gstreamer1-plugins-base gstreamer1
 ```
 
 # Accesorios

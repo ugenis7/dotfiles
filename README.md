@@ -53,12 +53,9 @@ sudo dnf install gstreamer-plugins-bad gstreamer-plugins-bad-free-extras \
 ```
 
 # Accesorios
-* Gaclulator
-* KeePassX
-* Mousepad
-* eMacs
-* redshift
+* KeePass
 * Bleachbit
+* Liferea
 
 # Trabajo
 * Haroopad

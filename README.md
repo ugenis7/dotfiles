@@ -4,21 +4,21 @@
 ```bash
 sudo dnf update --refresh
 ```
-# Theme:
+## Theme:
 Apps: GNOME-PRO-LighterBlue-1.2
 Cursors: Capitaine-cursors
 Icons: Oxygen
 
-# Extensions:
+## Extensions:
 - AlternateTab
 - Pomodoro
 - Topicons plus
 - User themes
 
-# Fonts:
+## Fonts:
 Lora
 
-# Hotkeys:
+## Hotkeys:
 - Firefox: Super + S
 - Thunderbird: Super + Q
 - Calculator: Super + C
@@ -29,19 +29,19 @@ Lora
 - Show desktop: Super + D
 
 
-# Enable RPM Fedora Fusion
+## Enable RPM Fedora Fusion
 ```bash
 sudo dnf install --nogpgcheck https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-28.noarch.rpm
 sudo dnf install --nogpgcheck https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-28.noarch.rpm
 ```
 
-# Install the C Development tools
+## Install the C Development tools
 ```bash
 sudo dnf groupinstall 'Development Tools'
 sudo dnf groupinstall 'C Development Tools and Libraries'
 sudo dnf install git
 ```
-# Install codecs
+## Install codecs
 ```bash
 sudo dnf install gstreamer-plugins-bad gstreamer-plugins-bad-free-extras \
 	gstreamer-plugins-bad-nonfree gstreamer-plugins-ugly gstreamer-ffmpeg \

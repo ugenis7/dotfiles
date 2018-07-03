@@ -1,6 +1,6 @@
 set nocompatible              		" We want the latest vim settings   
 
-so ~/gits/dotfiles/plugins.vim		" File with list of Plugins for vundle
+so plugins.vim				" File with list of Plugins for vundle
 
 syntax enable
 set number 

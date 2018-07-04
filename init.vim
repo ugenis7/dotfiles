@@ -21,7 +21,6 @@ Plugin 'mhinz/vim-janah'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-
 syntax enable
 set number 
 set relativenumber
@@ -34,6 +33,7 @@ let maplocalleader = ","
 " Visuals ----------------------------------------------------------------------
 set background=dark
 colorscheme gruvbox
+set guifont=Fira\ Mono\ for\ Powerline\ 9
 
 set guioptions-=r 			" Remove the scrollbars 
 set guioptions-=R
@@ -51,12 +51,13 @@ set colorcolumn=80			" Highlight the 80th column
 
 let g:airline_powerline_fonts = 1 	" Pretty airline
 
+
 " Search -----------------------------------------------------------------------
 set hlsearch
 set incsearch
 
 " Mappings ---------------------------------------------------------------------
-nmap ,ev :tabedit ~/.config/nvim/init.vim<cr>  	" Make it easy to edit the vimrc
+nmap ,ev :tabedit ~/gits/dotfiles/init.vim<cr> 	" Make it easy to edit the vimrc
 
 nmap ,<space> :nohlsearch<cr>		" Stop highlighting a search
 
@@ -64,7 +65,7 @@ nmap ,1 :NERDTreeToggle<cr>		" Make NERDTree easier to toggle
 
 inoremap <S-Tab> <Esc>/<++><Enter>"_c4l " Jumping points
 
-nnoremap ,n :bn<CR>
+nnoremap ,n :bn<CR>			" Switching across buffers
 nnoremap ,m :bp<cr>
 
 nmap <F5> :LLPStartPreview<cr>
@@ -96,4 +97,4 @@ let R_assign = 2			" Manual <- assignment
 let NERDTreeHijackNetrw = 0		" Don't take - from vinegar-vim
 
 " Latex-live-preview -----------------------------------------------------------
-let g:livepreview_previewer = 'zathura'	" Use mupdf for live preview
+let g:livepreview_previewer = 'zathura'	" Use zathura for live preview of .tex

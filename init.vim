@@ -61,7 +61,6 @@ nmap ,<space> :nohlsearch<cr>		" Stop highlighting a search
 nnoremap ,n :bn<CR>			" Switching across buffers
 nnoremap ,m :bp<cr>
 
-nmap <F5> :LLPStartPreview<cr>
 nmap <F9> :make<cr>
 
 " Autocommands -----------------------------------------------------------------

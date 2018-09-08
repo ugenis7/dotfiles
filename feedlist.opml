@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<opml version="1.0">
+  <head>
+    <title>Liferea Feed List Export</title>
+  </head>
+  <body>
+    <outline title="comics" text="comics" description="comics" type="folder">
+      <outline title="PHD Comics" text="PHD Comics" description="PHD Comics" type="rss" xmlUrl="http://phdcomics.com/gradfeed.php" htmlUrl="http://www.phdcomics.com"/>
+      <outline title="xkcd" text="xkcd" description="xkcd" type="atom" xmlUrl="https://xkcd.com/atom.xml" htmlUrl="https://xkcd.com/"/>
+    </outline>
+    <outline title="Authors" text="Authors" description="Authors" type="folder">
+      <outline title="Schmidt" text="Schmidt" description="Schmidt" type="rss" xmlUrl="https://syndic8.scopus.com/getMessage?registrationId=EIGGFKNGEIGGEIGHGIHOEPHNFOGOFNKHMKPLLMOMKW" htmlUrl="https://www.scopus.com"/>
+      <outline title="Wang Hungjen" text="Wang Hungjen" description="Wang Hungjen" type="rss" xmlUrl="https://syndic8.scopus.com/getMessage?registrationId=CHIDDJPDCHIDCHIEEHJLCOJKDNIMDJIHCNMKCJPLFU" htmlUrl="https://www.scopus.com"/>
+      <outline title="Kumbhakar" text="Kumbhakar" description="Kumbhakar" type="rss" xmlUrl="https://syndic8.scopus.com/getMessage?registrationId=EHGAFJNAEHGAEHGBGHHIEOHHFNHCHHPBJMPBNLNGEW" htmlUrl="https://www.scopus.com"/>
+      <outline title="Badin Daraio Simar 2010" text="Badin Daraio Simar 2010" description="Badin Daraio Simar 2010" type="rss" xmlUrl="https://syndic8.scopus.com/getMessage?registrationId=JBDGKDKGJBDGJBDHLBEOJHFOKIDOLGHLRGFNMKEJPZ" htmlUrl="https://www.scopus.com"/>
+      <outline title="Cinzia Daraio" text="Cinzia Daraio" description="Cinzia Daraio" type="rss" xmlUrl="https://syndic8.scopus.com/getMessage?registrationId=JIEHKKLHJIEHJIEILIFPJOGPKPGJJRHNPMLLQRMLQL" htmlUrl="https://www.scopus.com"/>
+      <outline title="Leopold Simar" text="Leopold Simar" description="Leopold Simar" type="rss" xmlUrl="https://syndic8.scopus.com/getMessage?registrationId=IAHCJCOCIAHCIAHDKAIKIGJLJGKFMFLCQILCIIHJKD" htmlUrl="https://www.scopus.com"/>
+      <outline title="Paul Wilson" text="Paul Wilson" description="Paul Wilson" type="rss" xmlUrl="https://syndic8.scopus.com/getMessage?registrationId=HBJCIDQCHBJCHBJDJBKKHHLLIHMGMHOLMHMGNIKLJD" htmlUrl="https://www.scopus.com"/>
+    </outline>
+    <outline title="Journals" text="Journals" description="Journals" type="folder">
+      <outline title="Journal of Economic Surveys" text="Journal of Economic Surveys" description="Journal of Economic Surveys" type="rss" xmlUrl="https://onlinelibrary.wiley.com/action/showFeed?jc=14676419&amp;type=etoc&amp;feed=rss" htmlUrl="https://onlinelibrary.wiley.com/loi/14676419?af=R"/>
+      <outline title="International Journal of Industrial Organization" text="International Journal of Industrial Organization" description="International Journal of Industrial Organization" type="rss" xmlUrl="https://rss.sciencedirect.com/publication/science/01677187" htmlUrl="https://www.sciencedirect.com/journal/international-journal-of-industrial-organization"/>
+      <outline title="Wiley: The Journal of Industrial Economics: Table of Contents" text="Wiley: The Journal of Industrial Economics: Table of Contents" description="Wiley: The Journal of Industrial Economics: Table of Contents" type="rss" xmlUrl="https://onlinelibrary.wiley.com/action/showFeed?jc=14676451&amp;type=etoc&amp;feed=rss" htmlUrl="https://onlinelibrary.wiley.com/loi/14676451?af=R"/>
+      <outline title="Latin American Economic Review" text="Latin American Economic Review" description="Latin American Economic Review" type="rss" xmlUrl="https://syndic8.scopus.com/getMessage?registrationId=DGBCEIICDGBCDGBDFGCKDNBFELGFFMFCHOBDIJHDFL" htmlUrl="https://www.scopus.com"/>
+      <outline title="Problemas del desarrollo" text="Problemas del desarrollo" description="Problemas del desarrollo" type="rss" xmlUrl="https://syndic8.scopus.com/getMessage?registrationId=HHDDIJKDHHDDHHDEJHELHODGIMIHMOIGILELIOKGKB" htmlUrl="https://www.scopus.com"/>
+      <outline title="Trimestre Econ&#xF3;mico" text="Trimestre Econ&#xF3;mico" description="Trimestre Econ&#xF3;mico" type="rss" xmlUrl="https://syndic8.scopus.com/getMessage?registrationId=FJGFGLNFFJGFFJGGHJHNFQGIGOLKGSPGHKJMFOPLKD" htmlUrl="https://www.scopus.com"/>
+      <outline title="Investigaci&#xF3;n Econ&#xF3;mica" text="Investigaci&#xF3;n Econ&#xF3;mica" description="Investigaci&#xF3;n Econ&#xF3;mica" type="rss" xmlUrl="https://syndic8.scopus.com/getMessage?registrationId=DGJAEIQADGJADGJBFGKIDNJDELOFIKMIDHJHJJPJDQ" htmlUrl="https://www.scopus.com"/>
+      <outline title="Econometrica" text="Econometrica" description="Econometrica" type="rss" xmlUrl="https://onlinelibrary.wiley.com/action/showFeed?jc=14680262&amp;type=etoc&amp;feed=rss" htmlUrl="https://onlinelibrary.wiley.com/loi/14680262?af=R"/>
+      <outline title="Applied Economics" text="Applied Economics" description="Applied Economics" type="rss" xmlUrl="https://www.tandfonline.com/action/showFeed?type=etoc&amp;feed=rss&amp;jc=raec20" htmlUrl="https://www.tandfonline.com/loi/raec20?af=R"/>
+      <outline title="Utilities Policy" text="Utilities Policy" description="Utilities Policy" type="rss" xmlUrl="https://rss.sciencedirect.com/publication/science/09571787" htmlUrl="https://www.sciencedirect.com/journal/utilities-policy"/>
+      <outline title="Journal of Productivity Analysis" text="Journal of Productivity Analysis" description="Journal of Productivity Analysis" type="rss" xmlUrl="https://link.springer.com/search.rss?facet-content-type=Article&amp;facet-journal-id=11123&amp;channel-name=Journal+of+Productivity+Analysis" htmlUrl="http://link.springer.com"/>
+      <outline title="European Journal of Operational Research" text="European Journal of Operational Research" description="European Journal of Operational Research" type="rss" xmlUrl="https://rss.sciencedirect.com/publication/science/03772217" htmlUrl="https://www.sciencedirect.com/journal/european-journal-of-operational-research"/>
+      <outline title="JEL" text="JEL" description="JEL" type="rss" xmlUrl="https://syndic8.scopus.com/getMessage?registrationId=HBIBIDPBHBIBHBICJBJJHIIEHBNCIIOIMCPFOIJJIP" htmlUrl="https://www.scopus.com"/>
+      <outline title="JEP" text="JEP" description="JEP" type="rss" xmlUrl="https://syndic8.scopus.com/getMessage?registrationId=IACAJCJAIACAIACBKADIIHCDIAHBIEGAPCIDPICCIO" htmlUrl="https://www.scopus.com"/>
+    </outline>
+    <outline title="Economics" text="Economics" description="Economics" type="folder">
+      <outline title="Impact of Social Sciences" text="Impact of Social Sciences" description="Impact of Social Sciences" type="rss" xmlUrl="http://feeds.feedburner.com/feedburner/LSEImpactBlog" htmlUrl="http://blogs.lse.ac.uk/impactofsocialsciences"/>
+      <outline title="Chris Blattman" text="Chris Blattman" description="Chris Blattman" type="rss" xmlUrl="https://chrisblattman.com/feed/" htmlUrl="https://chrisblattman.com"/>
+      <outline title="Hyndsight" text="Hyndsight" description="Hyndsight" type="rss" xmlUrl="http://feeds.feedburner.com/Hyndsight" htmlUrl="https://robjhyndman.com/hyndsight/"/>
+      <outline title="Nada es Gratis" text="Nada es Gratis" description="Nada es Gratis" type="rss" xmlUrl="http://nadaesgratis.es/feed" htmlUrl="http://nadaesgratis.es"/>
+      <outline title="Raul Pacheco-Vega, PhD" text="Raul Pacheco-Vega, PhD" description="Raul Pacheco-Vega, PhD" type="rss" xmlUrl="http://www.raulpacheco.org/feed/" htmlUrl="http://www.raulpacheco.org"/>
+      <outline title="Bayesian Investor Blog" text="Bayesian Investor Blog" description="Bayesian Investor Blog" type="rss" xmlUrl="http://www.bayesianinvestor.com/blog/index.php/feed/" htmlUrl="http://www.bayesianinvestor.com/blog"/>
+    </outline>
+    <outline title="geek" text="geek" description="geek" type="folder">
+      <outline title="RWeekly.org - Blogs to Learn R from the Community" text="RWeekly.org - Blogs to Learn R from the Community" description="RWeekly.org - Blogs to Learn R from the Community" type="atom" xmlUrl="https://rweekly.org/atom.xml" htmlUrl="https://rweekly.org/"/>
+      <outline title="Articles on Tidyverse" text="Articles on Tidyverse" description="Articles on Tidyverse" type="rss" xmlUrl="https://www.tidyverse.org/articles/index.xml" htmlUrl="https://www.tidyverse.org/articles/"/>
+      <outline title="Brno hat" text="Brno hat" description="Brno hat" type="rss" xmlUrl="https://eischmann.wordpress.com/feed/" htmlUrl="https://eischmann.wordpress.com"/>
+      <outline title="Diego Valle-Jones's Blog" text="Diego Valle-Jones's Blog" description="Diego Valle-Jones's Blog" type="atom" xmlUrl="https://blog.diegovalle.net/feeds/all.atom.xml" htmlUrl="https://blog.diegovalle.net/feeds/all.atom.xml"/>
+      <outline title="Creativos Online" text="Creativos Online" description="Creativos Online" type="rss" xmlUrl="http://feeds.feedburner.com/creativosonline" htmlUrl="https://www.creativosonline.org/blog"/>
+      <outline title="The New Rambler. An Online Review of Books - New Rambler Review" text="The New Rambler. An Online Review of Books - New Rambler Review" description="The New Rambler. An Online Review of Books - New Rambler Review" type="rss" xmlUrl="http://newramblerreview.com/?types[0]=1&amp;format=feed&amp;type=rss" htmlUrl="http://newramblerreview.com/Array"/>
+      <outline title="Magnet" text="Magnet" description="Magnet" type="rss" xmlUrl="http://feeds.weblogssl.com/xatakamagnet2" htmlUrl="https://magnet.xataka.com"/>
+      <outline title="OMG! Ubuntu!" text="OMG! Ubuntu!" description="OMG! Ubuntu!" type="rss" xmlUrl="http://feeds.feedburner.com/d0od" htmlUrl="https://www.omgubuntu.co.uk"/>
+      <outline title="Web Upd8 - Ubuntu / Linux blog" text="Web Upd8 - Ubuntu / Linux blog" description="Web Upd8 - Ubuntu / Linux blog" type="rss" xmlUrl="http://feeds2.feedburner.com/webupd8" htmlUrl="http://www.webupd8.org/"/>
+      <outline title="Fedora Magazine" text="Fedora Magazine" description="Fedora Magazine" type="rss" xmlUrl="https://fedoramagazine.org/feed/" htmlUrl="https://fedoramagazine.org"/>
+    </outline>
+    <outline title="philosophy" text="philosophy" description="philosophy" type="folder">
+      <outline title="That&#x2019;s so Random" text="That&#x2019;s so Random" description="That&#x2019;s so Random" type="atom" xmlUrl="https://edwinth.github.io/feed.xml" htmlUrl="https://edwinth.github.io/"/>
+      <outline title="Seeing into the True Nature" text="Seeing into the True Nature" description="Seeing into the True Nature" type="atom" xmlUrl="http://grognor.blogspot.com/feeds/posts/default" htmlUrl="http://grognor.blogspot.com/"/>
+      <outline title="Melting Asphalt" text="Melting Asphalt" description="Melting Asphalt" type="rss" xmlUrl="http://feeds.feedburner.com/MeltingAsphalt" htmlUrl="https://meltingasphalt.com"/>
+      <outline title="Everything Studies" text="Everything Studies" description="Everything Studies" type="rss" xmlUrl="https://everythingstudies.com/feed/" htmlUrl="https://everythingstudies.com"/>
+      <outline title="Entirely Useless" text="Entirely Useless" description="Entirely Useless" type="rss" xmlUrl="https://entirelyuseless.wordpress.com/feed/" htmlUrl="https://entirelyuseless.wordpress.com"/>
+      <outline title="Julia Galef" text="Julia Galef" description="Julia Galef" type="rss" xmlUrl="https://juliagalef.com/feed/" htmlUrl="https://juliagalef.com"/>
+      <outline title="First Followers" text="First Followers" description="First Followers" type="rss" xmlUrl="http://subscribe.vision.org/first-followers/rss.xml" htmlUrl="http://subscribe.vision.org/first-followers"/>
+      <outline title="Reading Acts" text="Reading Acts" description="Reading Acts" type="rss" xmlUrl="https://readingacts.com/feed/" htmlUrl="https://readingacts.com"/>
+    </outline>
+    <outline title="writing" text="writing" description="writing" type="folder">
+      <outline title="Textbook &amp; Academic Authors Association Blog" text="Textbook &amp; Academic Authors Association Blog" description="Textbook &amp; Academic Authors Association Blog" type="rss" xmlUrl="http://feeds.feedburner.com/taaonline/blog" htmlUrl="https://blog.taaonline.net"/>
+      <outline title="Jo VanEvery" text="Jo VanEvery" description="Jo VanEvery" type="rss" xmlUrl="http://feeds2.feedburner.com/JovanEveryca" htmlUrl="https://jovanevery.ca"/>
+      <outline title="The Thesis Whisperer" text="The Thesis Whisperer" description="The Thesis Whisperer" type="rss" xmlUrl="https://thesiswhisperer.com/feed/" htmlUrl="https://thesiswhisperer.com"/>
+      <outline title="Explorations of Style" text="Explorations of Style" description="Explorations of Style" type="rss" xmlUrl="https://explorationsofstyle.com/feed/" htmlUrl="https://explorationsofstyle.com"/>
+    </outline>
+  </body>
+</opml>

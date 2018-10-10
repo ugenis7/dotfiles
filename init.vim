@@ -71,6 +71,7 @@ augroup END
 
 au BufEnter *.txt setlocal fo=awtq tw=80
 au BufEnter *.tex setlocal fo=awtq tw=80
+au BufEnter *.md setlocal fo=awtq tw=80
 
 set autoindent
 

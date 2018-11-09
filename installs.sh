@@ -18,6 +18,9 @@ sudo dnf install adobe-source-\* google-droid-sans-fonts google-roboto-\* calibr
 # Needed to install tidyverse
 sudo dnf install openssl-devel libcurl-devel libxml2-devel
 
+# needed to install sf for r
+sudo dnf install gdal gdal-devel proj-devel proj libproj-devel proj-\* geos geos-devel libpqxx-devel netcdf-devel udunits2-devel cairo cairo-devel unixODBC-devel 
+
 # Flatpak
 #* bookworm
 #* cozy

@@ -1,48 +1,45 @@
 set nocompatible              		" We want the latest vim settings   
 
 " Vundle list
-filetype off                  " required
+filetype off
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'tpope/vim-vinegar'
-Plugin 'tpope/vim-surround'
-Plugin 'morhetz/gruvbox'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-pandoc/vim-pandoc'
-Plugin 'vim-pandoc/vim-pandoc-syntax'
-Plugin 'jalvesaq/Nvim-R'
-Plugin 'scrooloose/syntastic'
+Plugin 'VundleVim/Vundle.vim' 		" This plugin manager
+Plugin 'tpope/vim-vinegar'		" File manager
+Plugin 'tpope/vim-surround'		" For surrounding text
+Plugin 'morhetz/gruvbox' 		" Theme
+Plugin 'vim-airline/vim-airline'	" The powerline
+Plugin 'vim-pandoc/vim-pandoc'		" for integration with pandoc
+Plugin 'vim-pandoc/vim-pandoc-syntax'	" For syntax checking
+Plugin 'jalvesaq/Nvim-R'		" For using R inside nvim
+Plugin 'scrooloose/syntastic'		" For style linting
+Plugin 'godlygeek/tabular'		" For aligning in tabs
+Plugin 'lervag/vimtex'			" Better support for latex
+Plugin 'enricobacis/vim-airline-clock'  " A nice clock on airline
+Plugin 'endel/vim-github-colorscheme'	" A light theme
+Plugin 'ayu-theme/ayu-vim'
 
-call vundle#end()            " required
-filetype plugin indent on    " required
+call vundle#end()
+filetype plugin indent on
 
 syntax enable
 set number 
 set relativenumber
 
 set backspace=indent,eol,start 		" Make backspace behave normally
-filetype plugin on			" Useful for csv plugin
 
 let maplocalleader = ","
 
 " Visuals ----------------------------------------------------------------------
-set background=dark
-colorscheme gruvbox
-set guifont=Fira\ Mono\ for\ Powerline\ 9
-
-set guioptions-=r 			" Remove the scrollbars 
-set guioptions-=R
-set guioptions-=l
-set guioptions-=L
+set termguicolors
+let ayucolor="mirage"
+colorscheme ayu
 
 nmap <S-Insert> "+gP			" Paste clipboard
-
-set guioptions-=m 			" Remove the menubar from gui
-set guioptions-=T			" Remove the Toolbar from gui
+vmap <S-Del> "+y
 
 set cursorline 			 	" Highlight the current line
 set scrolloff=3		 	 	" Always have lines below
@@ -50,29 +47,38 @@ set colorcolumn=80			" Highlight the 80th column
 
 let g:airline_powerline_fonts = 1 	" Pretty airline
 
-
 " Search -----------------------------------------------------------------------
 set hlsearch
 set incsearch
 
 " Mappings ---------------------------------------------------------------------
-nmap ,ev :tabedit ~/gits/dotfiles/init.vim<cr> 	" Make it easy to edit the vimrc
+nmap ,ev :tabedit ~/proyectos/dotfiles/init.vim<cr> " Make it easy to edit the vimrc
 
-nmap ,<space> :nohlsearch<cr>		" Stop highlighting a search
+nmap ,<space> :nohlsearch<cr>                  " Stop highlighting a search
 
-nnoremap ,n :bn<CR>			" Switching across buffers
-nnoremap ,m :bp<cr>
+nnoremap ,n :bn<CR>                            " Switching across buffers
 nnoremap ,q :bd<cr>
+nnoremap <space> za
+
+vnoremap ,, y<c-w>wp<c-w>p 		" Paste in the other split
 
 nmap <F9> :make<cr>
 
 " Autocommands -----------------------------------------------------------------
 augroup autosourcing			" Automatically source the vimrc
 	autocmd!
-	autocmd BufWritePost ~/gits/dotfiles/init.vim source %
+	autocmd BufWritePost ~/proyectos/dotfiles/init.vim source %
 augroup END
 
-au BufEnter *.txt *.tex *.md setlocal fo=awtq tw=80
+au BufEnter *.txt setlocal fo=awtq tw=80
+au BufEnter *.tex setlocal fo=awtq tw=80
+au BufEnter *.md setlocal fo=awtq tw=80
+
+au BufEnter *.tex nnoremap <F5> :!pdflatex % %:r.pdf<Enter>
+au BufEnter *.tex nnoremap <F6> :!mupdf %:r.pdf &<Enter>
+
+au BufEnter *.md nnoremap <F5> :!pandoc -i % -o %:r.pdf<Enter>
+au BufEnter *.md nnoremap <F6> :!mupdf %:r.pdf &<Enter>
 
 set autoindent
 
@@ -93,3 +99,14 @@ let g:syntastic_enable_r_lintr_checker = 1
 let g:syntastic_r_checkers = ['lintr']
 
 let g:syntastic_r_lintr_linters = "with_defaults(no_tab_linter = NULL, infix_spaces_linter = NULL)"
+
+" Vimtex
+let g:tex_flavor='latex'
+let g:vimtex_quickfix_mode=0
+set conceallevel=1
+let g:tex_conceal='abdmg'
+
+" Snippets
+let g:UltiSnipsExpandTrigger = '<tab>'
+let g:UltiSnipsJumpForwardTrigger = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'

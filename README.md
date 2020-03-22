@@ -1,13 +1,15 @@
 # Things to do to a fresh installation of Fedora
 
 ## First things first
+
 ```bash
 sudo dnf update --refresh
 ```
+
 ## Theme:
-Apps: GNOME-PRO-LighterBlue-1.2
-Cursors: Capitaine-cursors
-Icons: Oxygen
+- Apps: GNOME-PRO
+- Cursors: Capitaine-cursors
+- Icons: Oxygen
 
 ## Extensions:
 - AlternateTab
@@ -16,7 +18,8 @@ Icons: Oxygen
 - User themes
 
 ## Fonts:
-Lora
+- Latin Modern Sans
+- Iosevka Fixed
 
 ## Hotkeys:
 - Firefox: Super + S
@@ -30,18 +33,22 @@ Lora
 
 
 ## Enable RPM Fedora Fusion
+
 ```bash
-sudo dnf install --nogpgcheck https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-28.noarch.rpm
-sudo dnf install --nogpgcheck https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-28.noarch.rpm
+sudo dnf install --nogpgcheck https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-31.noarch.rpm
+sudo dnf install --nogpgcheck https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-t1.noarch.rpm
 ```
 
 ## Install the C Development tools
+
 ```bash
 sudo dnf groupinstall 'Development Tools'
 sudo dnf groupinstall 'C Development Tools and Libraries'
 sudo dnf install git
 ```
+
 ## Install codecs
+
 ```bash
 sudo dnf install gstreamer-plugins-bad gstreamer-plugins-bad-free-extras \
 	gstreamer-plugins-bad-nonfree gstreamer-plugins-ugly gstreamer-ffmpeg \
@@ -52,49 +59,25 @@ sudo dnf install gstreamer-plugins-bad gstreamer-plugins-bad-free-extras \
 	gstreamer1-plugins-base gstreamer1
 ```
 
-# Accesorios
-* KeePass
-* Bleachbit
-* Liferea
+# Install software
 
-# Trabajo
-* Haroopad
-* RStudio
-* WxMaxima
-* gretl
-* geogebra
-* qtOctave
-
-# Graficos
-* GIMP
-
-# Internet
-* HexChat
-* Skype
-* Owncloud
-* FileZilla
-* remmina
-* Thunderbird
-
-# Multimedia
-* clementine
-* VLC
-* kodi
-* easytag
-* spotify
-
-# Oficina
-* Calibre
-* Libreoffice
-* lyx
-* gnucash
-* texmaker
-
-# Sistema
-* Zsh
-* Oh-my-zsh
-* Bleachbit
-* catfish
-* disk usage analyser
-* cpu-g
-* peazip
+- KeePass
+- Thunderbird
+- Thunar
+- Neovim
+- Bleachbit
+- GIMP
+- Inkscape
+- VLC
+- mpv
+- Calibre
+- texmaker
+- Zsh
+- Oh-my-zsh
+- Bleachbit
+- catfish
+- disk usage analyser
+- cpu-g
+- peazip
+- Rambox
+- Mupdf

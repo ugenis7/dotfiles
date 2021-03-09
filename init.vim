@@ -31,12 +31,13 @@ set relativenumber
 
 set backspace=indent,eol,start 		" Make backspace behave normally
 
-let maplocalleader = ","
+let mapleader=","
+let maplocalleader = ','
 
 " Visuals ----------------------------------------------------------------------
 set termguicolors
-let ayucolor="mirage"
-colorscheme ayu
+colorscheme gruvbox
+set background=light
 
 nmap <S-Insert> "+gP			" Paste clipboard
 vmap <S-Del> "+y
@@ -46,21 +47,25 @@ set scrolloff=3		 	 	" Always have lines below
 set colorcolumn=80			" Highlight the 80th column
 
 let g:airline_powerline_fonts = 1 	" Pretty airline
+let g:airline#extensions#wordcount#filetypes = 'pandoc'
+let g:airline#extensions#wordcount#filetypes = 'tex'
 
 " Search -----------------------------------------------------------------------
 set hlsearch
 set incsearch
 
 " Mappings ---------------------------------------------------------------------
-nmap ,ev :tabedit ~/proyectos/dotfiles/init.vim<cr> " Make it easy to edit the vimrc
+nmap <leader>ev :tabedit ~/proyectos/dotfiles/init.vim<cr> " Edit this file
 
-nmap ,<space> :nohlsearch<cr>                  " Stop highlighting a search
+map <silent> <leader><space> :nohlsearch<cr>      " Stop highlighting a search
 
-nnoremap ,n :bn<CR>                            " Switching across buffers
-nnoremap ,q :bd<cr>
+nnoremap <leader>n :bn<CR>                        " Switching across buffers
+nnoremap <leader>q :bd<cr>
 nnoremap <space> za
 
-vnoremap ,, y<c-w>wp<c-w>p 		" Paste in the other split
+inoremap <C-Space> <C-x><C-o>
+
+vnoremap ,, y<c-w>wp<c-w>p 		          " Paste in the other split
 
 nmap <F9> :make<cr>
 
@@ -71,12 +76,12 @@ augroup autosourcing			" Automatically source the vimrc
 augroup END
 
 au BufEnter *.txt setlocal fo=awtq tw=80
-au BufEnter *.tex setlocal fo=awtq tw=80
-au BufEnter *.md setlocal fo=awtq tw=80
 
-au BufEnter *.tex nnoremap <F5> :!pdflatex % %:r.pdf<Enter>
+au BufEnter *.tex setlocal fo=awtq tw=80
+au BufEnter *.tex nnoremap <F5> :!xelatex % %:r.pdf<Enter>
 au BufEnter *.tex nnoremap <F6> :!mupdf %:r.pdf &<Enter>
 
+au BufEnter *.md setlocal fo=awtq tw=80
 au BufEnter *.md nnoremap <F5> :!pandoc -i % -o %:r.pdf<Enter>
 au BufEnter *.md nnoremap <F6> :!mupdf %:r.pdf &<Enter>
 
@@ -92,7 +97,7 @@ let R_nvim_wd=1				" Same wd for Vim and R
 let R_objbr_place = "script,right"	" R console on the right
 let R_objbr_place = "console,left"	" Vim to the left
 
-let R_assign = 2			" Manual <- assignment
+let R_assign = 0			" Manual <- assignment
 
 " Linting ----------------------------------------------------------------------
 let g:syntastic_enable_r_lintr_checker = 1

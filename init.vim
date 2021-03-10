@@ -10,7 +10,6 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim' 		" This plugin manager
 Plugin 'tpope/vim-vinegar'		" File manager
 Plugin 'tpope/vim-surround'		" For surrounding text
-Plugin 'morhetz/gruvbox' 		" Theme
 Plugin 'vim-airline/vim-airline'	" The powerline
 Plugin 'vim-pandoc/vim-pandoc'		" for integration with pandoc
 Plugin 'vim-pandoc/vim-pandoc-syntax'	" For syntax checking
@@ -18,26 +17,22 @@ Plugin 'jalvesaq/Nvim-R'		" For using R inside nvim
 Plugin 'scrooloose/syntastic'		" For style linting
 Plugin 'godlygeek/tabular'		" For aligning in tabs
 Plugin 'lervag/vimtex'			" Better support for latex
-Plugin 'enricobacis/vim-airline-clock'  " A nice clock on airline
-Plugin 'endel/vim-github-colorscheme'	" A light theme
 Plugin 'ayu-theme/ayu-vim'
 
 call vundle#end()
 filetype plugin indent on
 
+
+" Visuals ----------------------------------------------------------------------
 syntax enable
 set number 
 set relativenumber
 
 set backspace=indent,eol,start 		" Make backspace behave normally
 
-let mapleader=","
-let maplocalleader = ','
-
-" Visuals ----------------------------------------------------------------------
 set termguicolors
-colorscheme gruvbox
-set background=light
+let ayucolor="mirage"
+colorscheme ayu
 
 nmap <S-Insert> "+gP			" Paste clipboard
 vmap <S-Del> "+y
@@ -55,6 +50,9 @@ set hlsearch
 set incsearch
 
 " Mappings ---------------------------------------------------------------------
+let mapleader=","
+let maplocalleader = ','
+
 nmap <leader>ev :tabedit ~/proyectos/dotfiles/init.vim<cr> " Edit this file
 
 map <silent> <leader><space> :nohlsearch<cr>      " Stop highlighting a search
@@ -62,10 +60,6 @@ map <silent> <leader><space> :nohlsearch<cr>      " Stop highlighting a search
 nnoremap <leader>n :bn<CR>                        " Switching across buffers
 nnoremap <leader>q :bd<cr>
 nnoremap <space> za
-
-inoremap <C-Space> <C-x><C-o>
-
-vnoremap ,, y<c-w>wp<c-w>p 		          " Paste in the other split
 
 nmap <F9> :make<cr>
 
@@ -87,11 +81,10 @@ au BufEnter *.md nnoremap <F6> :!mupdf %:r.pdf &<Enter>
 
 set autoindent
 
-" Split Management -------------------------------------------------------------
+" NvimR ------------------------------------------------------------------------
 set splitright
 set splitbelow
 
-" NvimR ------------------------------------------------------------------------
 let R_nvim_wd=1				" Same wd for Vim and R	
 
 let R_objbr_place = "script,right"	" R console on the right
@@ -110,8 +103,3 @@ let g:tex_flavor='latex'
 let g:vimtex_quickfix_mode=0
 set conceallevel=1
 let g:tex_conceal='abdmg'
-
-" Snippets
-let g:UltiSnipsExpandTrigger = '<tab>'
-let g:UltiSnipsJumpForwardTrigger = '<tab>'
-let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'

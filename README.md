@@ -7,9 +7,9 @@ sudo dnf update --refresh
 ```
 
 ## Theme:
-- Apps: GNOME-PRO
-- Cursors: Capitaine-cursors
-- Icons: Oxygen
+- Apps: Flat-Remix-GTK-Blue
+- Icons: Flat-Remix-Green
+- GNOME Shell: Flat-Remis-Blue-fullPanel
 
 ## Extensions:
 - AlternateTab
@@ -19,32 +19,31 @@ sudo dnf update --refresh
 
 ## Fonts:
 - Latin Modern Sans
+- Source Sans Pro
+- Source Serif Pro
+- Source Code Pro
+- Fira
 - Iosevka Fixed
 
 ## Hotkeys:
 - Firefox: Super + S
 - Thunderbird: Super + Q
 - Calculator: Super + C
-- Keepass: Super + z
+- Keepassxc: Super + z
 - Thunar: Super + F
 - Terminal: Super + T
 - Minimize: Super + Down
-- Show desktop: Super + D
+- Hide windows: Super + D
+- Toggle maximize: Super + up
+- Fullscreen mode: F11
+- Hide window: Super + down
 
 
 ## Enable RPM Fedora Fusion
 
 ```bash
-sudo dnf install --nogpgcheck https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-31.noarch.rpm
+sudo dnf install --nogpgcheck https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-33.noarch.rpm
 sudo dnf install --nogpgcheck https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-t1.noarch.rpm
-```
-
-## Install the C Development tools
-
-```bash
-sudo dnf groupinstall 'Development Tools'
-sudo dnf groupinstall 'C Development Tools and Libraries'
-sudo dnf install git
 ```
 
 ## Install codecs
@@ -61,23 +60,42 @@ sudo dnf install gstreamer-plugins-bad gstreamer-plugins-bad-free-extras \
 
 # Install software
 
-- KeePass
+## Everywhere
+- Deja Dup
 - Thunderbird
-- Thunar
+- Peazip
+- Foliate
+- Joplin
+- KeePassXC
 - Neovim
-- Bleachbit
+- R
+- Pandoc
 - GIMP
 - Inkscape
 - VLC
-- mpv
-- Calibre
-- texmaker
-- Zsh
-- Oh-my-zsh
-- Bleachbit
-- catfish
-- disk usage analyser
-- cpu-g
-- peazip
-- Rambox
 - Mupdf
+- Thunar
+- Zsh
+- Zotero
+- Zoom
+- Oh-my-zsh
+
+## At home
+- Audacity
+- Bleachbit
+- Calibre
+- Cozy
+- Gnucash
+- Signal
+- Telegram
+- Skype
+- Snes9x
+- SoundKonverter
+- Qbittorrent
+- Srain
+- Quod libet
+- mpv
+
+# R packages
+Tidyverse
+Janitor

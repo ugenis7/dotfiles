@@ -1,0 +1,17 @@
+---
+title: ""
+author: ""
+geometry: margin=1cm
+output: pdf_document
+---
+
+```{r setup, include = FALSE}
+library(tidyverse)
+library(kableExtra)
+
+knitr::opts_chunk$set(echo = FALSE,
+		      cache = TRUE,
+		      fig.align = "center",
+		      message = FALSE)
+# knitr::opts_knit$set(root.dir = "../..")
+```

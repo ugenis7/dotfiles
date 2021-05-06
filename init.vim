@@ -79,18 +79,29 @@ au BufEnter *.md setlocal fo=awtq tw=80
 au BufEnter *.md nnoremap <F5> :!pandoc -i % -o %:r.pdf<Enter>
 au BufEnter *.md nnoremap <F6> :!mupdf %:r.pdf &<Enter>
 
+au BufEnter *.R inoremap %% %>%<CR>
+
+au BufEnter *.Rmd setlocal fo=awtq tw=80
+au BufNewFile *.Rmd r ~/proyectos/dotfiles/template.Rmd
+
 set autoindent
 
 " NvimR ------------------------------------------------------------------------
 set splitright
 set splitbelow
 
+let R_auto_start=2			" Auto start when R file is open
 let R_nvim_wd=1				" Same wd for Vim and R	
 
 let R_objbr_place = "script,right"	" R console on the right
 let R_objbr_place = "console,left"	" Vim to the left
 
 let R_assign = 0			" Manual <- assignment
+
+let Rout_more_colors = 1
+let R_indent_commented = 0
+let R_rconsole_width = winwidth(0) / 2
+autocmd VimResized * let R_rconsole_width = winwidth(0) / 2
 
 " Linting ----------------------------------------------------------------------
 let g:syntastic_enable_r_lintr_checker = 1

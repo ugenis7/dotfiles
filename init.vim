@@ -42,8 +42,7 @@ set scrolloff=3		 	 	" Always have lines below
 set colorcolumn=80			" Highlight the 80th column
 
 let g:airline_powerline_fonts = 1 	" Pretty airline
-let g:airline#extensions#wordcount#filetypes = 'pandoc'
-let g:airline#extensions#wordcount#filetypes = 'tex'
+let g:airline#extensions#wordcount#filetypes = 'tex\|pandoc'
 
 " Search -----------------------------------------------------------------------
 set hlsearch
@@ -76,6 +75,7 @@ au BufEnter *.tex nnoremap <F5> :!xelatex % %:r.pdf<Enter>
 au BufEnter *.tex nnoremap <F6> :!mupdf %:r.pdf &<Enter>
 
 au BufEnter *.md setlocal fo=awtq tw=80
+au BufEnter *.md set spelllang=es
 au BufEnter *.md nnoremap <F5> :!pandoc -i % -o %:r.pdf<Enter>
 au BufEnter *.md nnoremap <F6> :!mupdf %:r.pdf &<Enter>
 

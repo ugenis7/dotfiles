@@ -18,6 +18,7 @@ Plugin 'scrooloose/syntastic'		" For style linting
 Plugin 'godlygeek/tabular'		" For aligning in tabs
 Plugin 'lervag/vimtex'			" Better support for latex
 Plugin 'ayu-theme/ayu-vim'
+Plugin 'dhruvasagar/vim-table-mode'     " Tables in Markdown
 
 call vundle#end()
 filetype plugin indent on
@@ -114,3 +115,6 @@ let g:tex_flavor='latex'
 let g:vimtex_quickfix_mode=0
 set conceallevel=1
 let g:tex_conceal='abdmg'
+
+" Table Mode
+let g:table_mode_corner='|'

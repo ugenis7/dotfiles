@@ -19,6 +19,7 @@ Plugin 'godlygeek/tabular'		" For aligning in tabs
 Plugin 'lervag/vimtex'			" Better support for latex
 Plugin 'ayu-theme/ayu-vim'
 Plugin 'dhruvasagar/vim-table-mode'     " Tables in Markdown
+Plugin 'joshdick/onedark.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -28,12 +29,13 @@ filetype plugin indent on
 syntax enable
 set number 
 set relativenumber
+set spelllang=es
 
 set backspace=indent,eol,start 		" Make backspace behave normally
 
 set termguicolors
-let ayucolor="mirage"
-colorscheme ayu
+"let ayucolor="mirage"
+colorscheme onedark
 
 nmap <S-Insert> "+gP			" Paste clipboard
 vmap <S-Del> "+y
@@ -75,10 +77,30 @@ au BufEnter *.tex setlocal fo=awtq tw=80
 au BufEnter *.tex nnoremap <F5> :!xelatex % %:r.pdf<Enter>
 au BufEnter *.tex nnoremap <F6> :!mupdf %:r.pdf &<Enter>
 
-au BufEnter *.md setlocal fo=awtq tw=80
-au BufEnter *.md set spelllang=es
-au BufEnter *.md nnoremap <F5> :!pandoc -i % -o %:r.pdf<Enter>
-au BufEnter *.md nnoremap <F6> :!mupdf %:r.pdf &<Enter>
+
+let g:pandoc#formatting#mode="hA"
+let g:pandoc#folding#fold_yaml = 1
+
+nmap <F5> :Pandoc! beamer --pdf-engine=xelatex 
+			\ --variable lang=es-MX
+			\ --variable aspectratio=169 
+			\ --variable theme="Berlin" 
+			\ --variable colortheme="rose" 
+			\ --variable mainfont="Lato" 
+			\ --variable mathfont="TeX Gyre Pagella Math" 
+			\ --variable fontsize=12pt<CR>
+
+nmap <F6> :Pandoc! pdf --pdf-engine=xelatex
+			\ --variable lang=es-MX
+			\ --variable mainfont="Lato"
+			\ --variable mathfont="TeX Gyre Pagella Math"
+			\ --variable fontsize=12pt
+			\ --variable linestretch=1.25
+			\ --variable geometry:letterpaper
+			\ --variable geometry:margin="1in"<CR>
+
+nmap <F7> :Pandoc! odt<CR>
+
 
 au BufEnter *.R inoremap %% %>%<CR>
 

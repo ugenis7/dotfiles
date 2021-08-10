@@ -41,6 +41,7 @@ nmap <S-Insert> "+gP			" Paste clipboard
 vmap <S-Del> "+y
 
 set cursorline 			 	" Highlight the current line
+set cursorcolumn
 set scrolloff=3		 	 	" Always have lines below
 set colorcolumn=80			" Highlight the 80th column
 

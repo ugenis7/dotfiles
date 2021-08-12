@@ -103,7 +103,8 @@ nmap <F6> :Pandoc! pdf --pdf-engine=xelatex
 nmap <F7> :Pandoc! odt<CR>
 
 
-au BufEnter *.R inoremap %% %>%<CR>
+au BufEnter *.R iabbrev %% %>%
+
 
 au BufEnter *.Rmd setlocal fo=awtq tw=80
 au BufNewFile *.Rmd r ~/proyectos/dotfiles/template.Rmd

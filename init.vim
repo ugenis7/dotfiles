@@ -78,8 +78,7 @@ au BufEnter *.tex setlocal fo=awtq tw=80
 au BufEnter *.tex nnoremap <F5> :!xelatex % %:r.pdf<Enter>
 au BufEnter *.tex nnoremap <F6> :!mupdf %:r.pdf &<Enter>
 
-
-let g:pandoc#formatting#mode="hA"
+au BufEnter *.md setlocal fo=awtq tw=80
 let g:pandoc#folding#fold_yaml = 1
 
 nmap <F5> :Pandoc! beamer --pdf-engine=xelatex 
@@ -89,7 +88,7 @@ nmap <F5> :Pandoc! beamer --pdf-engine=xelatex
 			\ --variable colortheme="rose" 
 			\ --variable mainfont="Lato" 
 			\ --variable mathfont="TeX Gyre Pagella Math" 
-			\ --variable fontsize=12pt<CR>
+			\ --variable fontsize=12pt<CR><CR>
 
 nmap <F6> :Pandoc! pdf --pdf-engine=xelatex
 			\ --variable lang=es-MX
@@ -98,13 +97,11 @@ nmap <F6> :Pandoc! pdf --pdf-engine=xelatex
 			\ --variable fontsize=12pt
 			\ --variable linestretch=1.25
 			\ --variable geometry:letterpaper
-			\ --variable geometry:margin="1in"<CR>
+			\ --variable geometry:margin="1in"<CR><CR>
 
-nmap <F7> :Pandoc! odt<CR>
-
+nmap <F7> :Pandoc! odt<CR><CR>
 
 au BufEnter *.R iabbrev %% %>%
-
 
 au BufEnter *.Rmd setlocal fo=awtq tw=80
 au BufNewFile *.Rmd r ~/proyectos/dotfiles/template.Rmd
@@ -142,3 +139,5 @@ let g:tex_conceal='abdmg'
 
 " Table Mode
 let g:table_mode_corner='|'
+
+let g:netrw_bufsettings="noma nomod nonu nobl nowrap ro rnu"

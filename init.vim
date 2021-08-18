@@ -124,6 +124,7 @@ let Rout_more_colors = 1
 let R_indent_commented = 0
 let R_rconsole_width = winwidth(0) / 2
 autocmd VimResized * let R_rconsole_width = winwidth(0) / 2
+let R_args = ['--no-save', '--quiet']
 
 " Linting ----------------------------------------------------------------------
 let g:syntastic_enable_r_lintr_checker = 1

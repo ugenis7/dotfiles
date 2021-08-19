@@ -7,31 +7,36 @@ sudo dnf update --refresh
 ```
 
 ## Theme:
-- Apps: Flat-Remix-GTK-Blue
+- Apps: NewAdwaita-Slim
 - Icons: Flat-Remix-Green
-- GNOME Shell: Flat-Remis-Blue-fullPanel
+- GNOME Shell: Flat-Remix-Blue-fullPanel
+- Background: tri-fadeno.jpg
 
 ## Extensions:
-- AlternateTab
 - Pomodoro
-- Topicons plus
+- Coverflow alt-tab
+- gTile
+- OpenWeather
+- Trayicons Reloaded
 - User themes
 
 ## Fonts:
-- Latin Modern Sans
 - Source Sans Pro
 - Source Serif Pro
 - Source Code Pro
 - Fira
+- Zilla slab
 - Iosevka Fixed
+- Merriweather
+- Noto Serif
+- Noto Sans
 
 ## Hotkeys:
-- Firefox: Super + S
-- Thunderbird: Super + Q
+- Chrom: Super + S
 - Calculator: Super + C
 - Keepassxc: Super + z
 - Thunar: Super + F
-- Terminal: Super + T
+- Kitty: Super + T
 - Minimize: Super + Down
 - Hide windows: Super + D
 - Toggle maximize: Super + up
@@ -49,53 +54,95 @@ sudo dnf install --nogpgcheck https://download1.rpmfusion.org/nonfree/fedora/rpm
 ## Install codecs
 
 ```bash
-sudo dnf install gstreamer-plugins-bad gstreamer-plugins-bad-free-extras \
-	gstreamer-plugins-bad-nonfree gstreamer-plugins-ugly gstreamer-ffmpeg \
-	gstreamer1-libav gstreamer1-plugins-bad-free-extras \
-	gstreamer1-plugins-bad-freeworld gstreamer1-plugins-base-tools \
-	gstreamer1-plugins-good-extras gstreamer1-plugins-ugly \
-	gstreamer1-plugins-bad-free gstreamer1-plugins-good \
+sudo dnf install \
+	gstreamer-plugins-bad \
+	gstreamer-plugins-bad-free-extras \
+	gstreamer-plugins-bad-nonfree \
+	gstreamer-plugins-ugly \
+	gstreamer-ffmpeg \
+	gstreamer1-libav \
+	gstreamer1-plugins-bad-free-extras \
+	gstreamer1-plugins-bad-freeworld \
+	gstreamer1-plugins-base-tools \
+	gstreamer1-plugins-good-extras \
+	gstreamer1-plugins-ugly \
+	gstreamer1-plugins-bad-free \
+	gstreamer1-plugins-good \
 	gstreamer1-plugins-base gstreamer1
 ```
 
 # Install software
-
-## Everywhere
-- Deja Dup
-- Thunderbird
-- Peazip
-- Foliate
-- Joplin
-- KeePassXC
-- Neovim
-- R
-- Pandoc
-- GIMP
-- Inkscape
-- VLC
-- Mupdf
-- Thunar
-- Zsh
-- Zotero
-- Zoom
-- Oh-my-zsh
-
-## At home
-- Audacity
 - Bleachbit
 - Calibre
 - Cozy
+- Darktable
+- Dropbox
+- Deja Dup
+- FileZilla
+- Foliate
+- GIMP
+- gitg
 - Gnucash
-- Signal
-- Telegram
-- Skype
-- Snes9x
-- SoundKonverter
-- Qbittorrent
-- Srain
-- Quod libet
+- Google-Chrome
+- GParted
+- Inkscape
+- Joplin
+- KeePassXC
+- Kitty
 - mpv
+- Mupdf
+- Nextcloud
+- Neovim
+- Oh-my-zsh
+- Pandoc
+- PDF Mod
+- Peazip
+- Pitivi
+- Podcasts
+- Qbittorrent
+- Quod libet
+- QGIS
+- R
+- Signal
+- Spotify
+- Skype
+- SoundKonverter
+- Srain
+- Telegram
+- Thunar
+- VLC
+- Virtualbox
+- Zoom
+- Zotero
+- Zsh
 
 # R packages
-Tidyverse
-Janitor
+tidyverse
+lubridate
+Benchmarking
+RColorBrewer
+XML
+broom
+foreign
+frontier
+gghighlight
+ggrepel
+ggridges
+hasseDiagram
+httr
+jsonlite
+knitr
+lmtest
+modelr
+npsf
+openxlsx
+pals
+readxl
+rjson
+rjstat
+scales
+sf
+stringr
+tidyquant
+writexl
+xtable

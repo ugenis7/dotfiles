@@ -56,7 +56,7 @@ set incsearch
 let mapleader=","
 let maplocalleader = ','
 
-nmap <leader>ev :tabedit ~/proyectos/dotfiles/init.vim<cr> " Edit this file
+nmap <leader>ev :tabedit ~/dotfiles/init.vim<cr> " Edit this file
 
 map <silent> <leader><space> :nohlsearch<cr>      " Stop highlighting a search
 

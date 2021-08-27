@@ -17,9 +17,8 @@ Plugin 'jalvesaq/Nvim-R'		" For using R inside nvim
 Plugin 'scrooloose/syntastic'		" For style linting
 Plugin 'godlygeek/tabular'		" For aligning in tabs
 Plugin 'lervag/vimtex'			" Better support for latex
-Plugin 'ayu-theme/ayu-vim'
 Plugin 'dhruvasagar/vim-table-mode'     " Tables in Markdown
-Plugin 'joshdick/onedark.vim'
+Plugin 'chriskempson/base16-vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -34,8 +33,7 @@ set spelllang=es
 set backspace=indent,eol,start 		" Make backspace behave normally
 
 set termguicolors
-"let ayucolor="mirage"
-colorscheme onedark
+colorscheme base16-flat
 
 nmap <S-Insert> "+gP			" Paste clipboard
 vmap <S-Del> "+y
@@ -60,7 +58,7 @@ nmap <leader>ev :tabedit ~/dotfiles/init.vim<cr> " Edit this file
 
 map <silent> <leader><space> :nohlsearch<cr>      " Stop highlighting a search
 
-nnoremap <leader>n :bn<CR>                        " Switching across buffers
+nnoremap <leader>nn :bn<CR>                        " Switching across buffers
 nnoremap <leader>q :bd<cr>
 nnoremap <space> za
 
@@ -69,7 +67,7 @@ nmap <F9> :make<cr>
 " Autocommands -----------------------------------------------------------------
 augroup autosourcing			" Automatically source the vimrc
 	autocmd!
-	autocmd BufWritePost ~/proyectos/dotfiles/init.vim source %
+	autocmd BufWritePost ~/dotfiles/init.vim source %
 augroup END
 
 au BufEnter *.txt setlocal fo=awtq tw=80

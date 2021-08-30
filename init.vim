@@ -20,6 +20,7 @@ Plugin 'lervag/vimtex'			" Better support for latex
 Plugin 'ayu-theme/ayu-vim'
 Plugin 'dhruvasagar/vim-table-mode'     " Tables in Markdown
 Plugin 'joshdick/onedark.vim'
+Plugin 'jalvesaq/zotcite'
 
 call vundle#end()
 filetype plugin indent on

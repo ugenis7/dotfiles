@@ -94,7 +94,7 @@ nmap <F5> :Pandoc! beamer --pdf-engine=xelatex
 
 nmap <F6> :Pandoc! pdf --pdf-engine=xelatex
 			\ --variable lang=es-MX
-			\ --variable mainfont="Lato"
+			\ --variable mainfont="Source Sans 3"
 			\ --variable mathfont="TeX Gyre Pagella Math"
 			\ --variable fontsize=12pt
 			\ --variable linestretch=1.25

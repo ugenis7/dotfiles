@@ -81,13 +81,16 @@ au BufEnter *.md setlocal fo=awtq tw=80
 let g:pandoc#folding#fold_yaml = 1
 
 nmap <F5> :Pandoc! beamer --pdf-engine=xelatex 
+			\ -i
+			\ --from markdown
 			\ --variable lang=es-MX
 			\ --variable aspectratio=169 
-			\ --variable theme="Berlin" 
-			\ --variable colortheme="rose" 
-			\ --variable mainfont="Lato" 
+			\ --variable theme="Boadilla" 
+			\ --variable colortheme="dolphin" 
+			\ --variable innertheme="rectangles"
+			\ --variable mainfont="Source Sans 3" 
 			\ --variable mathfont="TeX Gyre Pagella Math" 
-			\ --variable fontsize=12pt<CR><CR>
+			\ --variable fontsize=11pt<CR><CR>
 
 nmap <F6> :Pandoc! pdf --pdf-engine=xelatex
 			\ --variable lang=es-MX
@@ -103,7 +106,8 @@ nmap <F7> :Pandoc! odt<CR><CR>
 au BufEnter *.R iabbrev %% %>%
 
 au BufEnter *.Rmd setlocal fo=awtq tw=80
-au BufNewFile *.Rmd r ~/proyectos/dotfiles/template.Rmd
+au BufNewFile *.Rmd r ~/dotfiles/template.Rmd
+au BufEnter *.Rmd iabbrev %% %>%
 
 set autoindent
 

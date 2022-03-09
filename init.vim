@@ -34,7 +34,7 @@ set spelllang=es
 set backspace=indent,eol,start 		" Make backspace behave normally
 
 set termguicolors
-colorscheme base16-material-vivid
+colorscheme base16-bright
 
 nmap <S-Insert> "+gP			" Paste clipboard
 vmap <S-Del> "+y

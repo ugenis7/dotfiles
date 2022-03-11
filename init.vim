@@ -11,6 +11,7 @@ Plugin 'VundleVim/Vundle.vim' 		" This plugin manager
 Plugin 'tpope/vim-vinegar'		" File manager
 Plugin 'tpope/vim-surround'		" For surrounding text
 Plugin 'vim-airline/vim-airline'	" The powerline
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'vim-pandoc/vim-pandoc'		" for integration with pandoc
 Plugin 'vim-pandoc/vim-pandoc-syntax'	" For syntax checking
 Plugin 'jalvesaq/Nvim-R'		" For using R inside nvim
@@ -46,6 +47,9 @@ set colorcolumn=80			" Highlight the 80th column
 
 let g:airline_powerline_fonts = 1 	" Pretty airline
 let g:airline#extensions#wordcount#filetypes = 'tex\|pandoc'
+let g:airline_theme='base16_dracula'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'default'
 
 " Search -----------------------------------------------------------------------
 set hlsearch
@@ -104,6 +108,7 @@ nmap <F6> :Pandoc! pdf --pdf-engine=xelatex
 nmap <F7> :Pandoc! odt<CR><CR>
 
 au BufEnter *.R iabbrev %% %>%
+au BufEnter *.R set foldmethod=marker
 
 au BufEnter *.Rmd setlocal fo=awtq tw=80
 au BufNewFile *.Rmd r ~/dotfiles/template.Rmd

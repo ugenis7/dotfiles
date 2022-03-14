@@ -69,6 +69,13 @@ nnoremap <space> za
 
 nmap <F9> :make<cr>
 
+inoremap " ""<Left>
+inoremap ' ''<Left>
+inoremap ( ()<Left>
+inoremap [ []<Left>
+inoremap { {<CR>}<ESC>O
+
+
 " Autocommands -----------------------------------------------------------------
 augroup autosourcing			" Automatically source the vimrc
 	autocmd!

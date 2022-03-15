@@ -113,7 +113,19 @@ nmap <F6> :Pandoc! pdf --pdf-engine=xelatex
 			\ --variable geometry:letterpaper
 			\ --variable geometry:margin="1in"<CR><CR>
 
-nmap <F7> :Pandoc! odt<CR><CR>
+nmap <F7> :Pandoc odt -f markdown 
+			\ -F ~/.vim/bundle/zotcite/python3/zotref.py 
+			\ --citeproc 
+			\ --csl ~/dotfiles/apa.csl 
+			\ --variable lang=es-MX 
+			\ --reference-doc=~/dotfiles/coltam.odt<CR><CR>
+
+nmap <F8> :Pandoc odt -f markdown 
+			\ -F ~/.vim/bundle/zotcite/python3/zotref.py 
+			\ --citeproc 
+			\ --csl ~/dotfiles/apa.csl 
+			\ --variable lang=es-MX 
+			\ --reference-doc=~/dotfiles/imprimible.odt<CR><CR>
 
 au BufEnter *.R iabbrev %% %>%
 au BufEnter *.R set foldmethod=marker

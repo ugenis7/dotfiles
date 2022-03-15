@@ -53,7 +53,7 @@ let g:airline_powerline_fonts = 1 	" Pretty airline
 let g:airline#extensions#wordcount#filetypes = 'tex\|pandoc'
 let g:airline_theme='base16_dracula'
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#formatter = 'default'
+" let g:airline#extensions#tabline#formatter = 'default'
 
 " Search -----------------------------------------------------------------------
 set hlsearch
@@ -72,6 +72,10 @@ nnoremap <leader>q :bd<cr>
 nnoremap <space> za
 
 nmap <F9> :make<cr>
+
+nmap <C-n> :tabnext<CR>
+nmap <C-p> :tabprevious<CR>
+nmap <C-s> :tabnew<CR>
 
 " Autocommands -----------------------------------------------------------------
 augroup autosourcing			" Automatically source the vimrc

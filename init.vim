@@ -25,6 +25,7 @@ Plugin 'junegunn/limelight.vim'
 Plugin 'junegunn/goyo.vim'
 "Plugin 'jiangmiao/auto-pairs'
 Plugin 'tpope/vim-fugitive'
+Plugin 'preservim/nerdtree'
 
 call vundle#end()
 filetype plugin indent on
@@ -76,6 +77,8 @@ nmap <F9> :make<cr>
 nmap <C-n> :tabnext<CR>
 nmap <C-p> :tabprevious<CR>
 nmap <C-s> :tabnew<CR>
+nmap <C-x> :tabclose<CR>
+nnoremap <C-e> :NERDTreeToggle<CR>
 
 " Autocommands -----------------------------------------------------------------
 augroup autosourcing			" Automatically source the vimrc

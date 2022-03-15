@@ -23,7 +23,7 @@ Plugin 'chriskempson/base16-vim'	" Better colors
 Plugin 'jalvesaq/zotcite'
 Plugin 'junegunn/limelight.vim'
 Plugin 'junegunn/goyo.vim'
-Plugin 'jiangmiao/auto-pairs'
+"Plugin 'jiangmiao/auto-pairs'
 Plugin 'tpope/vim-fugitive'
 
 call vundle#end()
@@ -119,8 +119,8 @@ au BufEnter *.R iabbrev %% %>%
 au BufEnter *.R set foldmethod=marker
 
 au BufEnter *.Rmd setlocal fo=awtq tw=80
-au BufNewFile *.Rmd r ~/dotfiles/template.Rmd
 au BufEnter *.Rmd iabbrev %% %>%
+au BufNewFile *.Rmd r ~/dotfiles/template.Rmd
 
 set autoindent
 
@@ -130,6 +130,8 @@ set splitbelow
 
 let R_auto_start=2			" Auto start when R file is open
 let R_nvim_wd=1				" Same wd for Vim and R	
+
+let R_start_libs = 'base,stats,graphics,grDevices,utils,methods,tidyverse,lubridate'
 
 let R_assign = 0			" Manual <- assignment
 

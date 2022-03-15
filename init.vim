@@ -19,7 +19,7 @@ Plugin 'scrooloose/syntastic'		" For style linting
 Plugin 'godlygeek/tabular'		" For aligning in tabs
 Plugin 'lervag/vimtex'			" Better support for latex
 Plugin 'dhruvasagar/vim-table-mode'     " Tables in Markdown
-Plugin 'chriskempson/base16-vim'
+Plugin 'chriskempson/base16-vim'	" Better colors
 Plugin 'jalvesaq/zotcite'
 Plugin 'junegunn/limelight.vim'
 Plugin 'junegunn/goyo.vim'

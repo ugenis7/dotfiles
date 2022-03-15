@@ -21,6 +21,10 @@ Plugin 'lervag/vimtex'			" Better support for latex
 Plugin 'dhruvasagar/vim-table-mode'     " Tables in Markdown
 Plugin 'chriskempson/base16-vim'
 Plugin 'jalvesaq/zotcite'
+Plugin 'junegunn/limelight.vim'
+Plugin 'junegunn/goyo.vim'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'tpope/vim-fugitive'
 
 call vundle#end()
 filetype plugin indent on
@@ -68,13 +72,6 @@ nnoremap <leader>q :bd<cr>
 nnoremap <space> za
 
 nmap <F9> :make<cr>
-
-inoremap " ""<Left>
-inoremap ' ''<Left>
-inoremap ( ()<Left>
-inoremap [ []<Left>
-inoremap { {<CR>}<ESC>O
-
 
 " Autocommands -----------------------------------------------------------------
 augroup autosourcing			" Automatically source the vimrc
@@ -130,9 +127,6 @@ set splitbelow
 let R_auto_start=2			" Auto start when R file is open
 let R_nvim_wd=1				" Same wd for Vim and R	
 
-let R_objbr_place = "script,right"	" R console on the right
-let R_objbr_place = "console,left"	" Vim to the left
-
 let R_assign = 0			" Manual <- assignment
 
 let Rout_more_colors = 1
@@ -157,3 +151,11 @@ let g:tex_conceal='abdmg'
 let g:table_mode_corner='|'
 
 let g:netrw_bufsettings="noma nomod nonu nobl nowrap ro rnu"
+
+" Goyo
+let g:goyo_width=85
+
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
+
+nmap <Leader>g :Goyo<CR>

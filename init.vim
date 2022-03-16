@@ -72,6 +72,8 @@ nnoremap <leader>nn :bn<CR>                        " Switching across buffers
 nnoremap <leader>q :bd<cr>
 nnoremap <space> za
 
+nmap <F2> :cd %:h<CR>
+
 nmap <F9> :make<cr>
 
 nmap <C-n> :tabnext<CR>

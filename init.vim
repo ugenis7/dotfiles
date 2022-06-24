@@ -26,6 +26,7 @@ Plugin 'junegunn/goyo.vim'
 "Plugin 'jiangmiao/auto-pairs'
 Plugin 'tpope/vim-fugitive'
 Plugin 'preservim/nerdtree'
+Plugin 'chrisbra/csv.vim'
 
 call vundle#end()
 filetype plugin indent on

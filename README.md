@@ -149,5 +149,5 @@ xtable
 
 # Acciones personalizadas
 
-Separar: /home/coltam05/dotfiles/pdfsep.sh %f
+Separar: /home/ugenis/dotfiles/pdfsep.sh %f
 Unir: pdfunite %F $(mktemp -p %d --suffix=.pdf Merged_pdf_XXXXXX)

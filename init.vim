@@ -7,26 +7,27 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+"Plugin 'jiangmiao/auto-pairs'
 Plugin 'VundleVim/Vundle.vim' 		" This plugin manager
-Plugin 'tpope/vim-vinegar'		" File manager
+Plugin 'chrisbra/csv.vim'		" For viewing csv files
+Plugin 'chriskempson/base16-vim'	" Better colors
+Plugin 'dhruvasagar/vim-table-mode'     " Tables in Markdown
+Plugin 'godlygeek/tabular'		" For aligning in tabs
+Plugin 'jalvesaq/Nvim-R'		" For using R inside nvim
+Plugin 'jalvesaq/zotcite'		" Citing with Zotero
+Plugin 'junegunn/goyo.vim'		" Clean environment
+Plugin 'junegunn/limelight.vim'		" Focus writing
+Plugin 'lervag/vimtex'			" Better support for latex
+Plugin 'preservim/nerdtree'		" More complex file manager
+Plugin 'scrooloose/syntastic'		" For style linting
+Plugin 'tpope/vim-fugitive'		" Git integration
 Plugin 'tpope/vim-surround'		" For surrounding text
+Plugin 'tpope/vim-vinegar'		" File manager
 Plugin 'vim-airline/vim-airline'	" The powerline
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'vim-pandoc/vim-pandoc'		" for integration with pandoc
 Plugin 'vim-pandoc/vim-pandoc-syntax'	" For syntax checking
-Plugin 'jalvesaq/Nvim-R'		" For using R inside nvim
-Plugin 'scrooloose/syntastic'		" For style linting
-Plugin 'godlygeek/tabular'		" For aligning in tabs
-Plugin 'lervag/vimtex'			" Better support for latex
-Plugin 'dhruvasagar/vim-table-mode'     " Tables in Markdown
-Plugin 'chriskempson/base16-vim'	" Better colors
-Plugin 'jalvesaq/zotcite'
-Plugin 'junegunn/limelight.vim'
-Plugin 'junegunn/goyo.vim'
-"Plugin 'jiangmiao/auto-pairs'
-Plugin 'tpope/vim-fugitive'
-Plugin 'preservim/nerdtree'
-Plugin 'chrisbra/csv.vim'
+Plugin 'frazrepo/vim-rainbow'
 
 call vundle#end()
 filetype plugin indent on
@@ -41,7 +42,7 @@ set spelllang=es
 set backspace=indent,eol,start 		" Make backspace behave normally
 
 set termguicolors
-colorscheme base16-bright
+colorscheme base16-material-darker
 
 nmap <S-Insert> "+gP			" Paste clipboard
 vmap <S-Del> "+y
@@ -53,9 +54,8 @@ set colorcolumn=80			" Highlight the 80th column
 
 let g:airline_powerline_fonts = 1 	" Pretty airline
 let g:airline#extensions#wordcount#filetypes = 'tex\|pandoc'
-let g:airline_theme='base16_dracula'
+let g:airline_theme='base16_material_darker'
 let g:airline#extensions#tabline#enabled = 1
-" let g:airline#extensions#tabline#formatter = 'default'
 
 " Search -----------------------------------------------------------------------
 set hlsearch
@@ -72,8 +72,6 @@ map <silent> <leader><space> :nohlsearch<cr>      " Stop highlighting a search
 nnoremap <leader>nn :bn<CR>                        " Switching across buffers
 nnoremap <leader>q :bd<cr>
 nnoremap <space> za
-
-nmap <F2> :cd %:h<CR>
 
 nmap <F9> :make<cr>
 
@@ -135,6 +133,7 @@ nmap <F8> :Pandoc odt -f markdown
 
 au BufEnter *.R iabbrev %% %>%
 au BufEnter *.R set foldmethod=marker
+au BufEnter *.R setlocal fo=acrqwlj tw=80
 
 au BufEnter *.Rmd setlocal fo=awtq tw=80
 au BufEnter *.Rmd iabbrev %% %>%
@@ -143,21 +142,16 @@ au BufNewFile *.Rmd r ~/dotfiles/template.Rmd
 set autoindent
 
 " NvimR ------------------------------------------------------------------------
-set splitright
-set splitbelow
-
 let R_auto_start=2			" Auto start when R file is open
-let R_nvim_wd=1				" Same wd for Vim and R	
 
 let R_start_libs = 'base,stats,graphics,grDevices,utils,methods,tidyverse,lubridate'
 
 let R_assign = 0			" Manual <- assignment
 
-let Rout_more_colors = 1
 let R_indent_commented = 0
-let R_rconsole_width = winwidth(0) / 2
-autocmd VimResized * let R_rconsole_width = winwidth(0) / 2
 let R_args = ['--no-save', '--quiet']
+
+let R_external_term = 1
 
 " Linting ----------------------------------------------------------------------
 let g:syntastic_enable_r_lintr_checker = 1
@@ -174,6 +168,7 @@ let g:tex_conceal='abdmg'
 " Table Mode
 let g:table_mode_corner='|'
 
+" NerdTree
 let g:netrw_bufsettings="noma nomod nonu nobl nowrap ro rnu"
 
 " Goyo
@@ -183,3 +178,5 @@ autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 
 nmap <Leader>g :Goyo<CR>
+
+let g:rainbow_active = 1

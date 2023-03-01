@@ -67,18 +67,19 @@ let maplocalleader = ','
 
 nmap <leader>ev :tabedit ~/dotfiles/init.vim<cr> " Edit this file
 
-map <silent> <leader><space> :nohlsearch<cr>      " Stop highlighting a search
+nnoremap <silent> <leader><space> :nohlsearch<cr> " Stop highlighting a search
 
-nnoremap <leader>nn :bn<CR>                        " Switching across buffers
-nnoremap <leader>q :bd<cr>
-nnoremap <space> za
+nnoremap <C-Tab> :bn<CR>                        " Switching across buffers
+nnoremap <C-S-Tab> :bp<CR>                      " Switching across buffers
+nnoremap <leader>1 :b1<CR> 			" Go to main buffer
+nnoremap <C-t> :enew<CR>			" New buffer
+nnoremap <C-w> :bd<CR>				" Close buffer
+nnoremap <space> za				" Toggle folds
 
 nmap <F9> :make<cr>
 
-nmap <C-n> :tabnext<CR>
-nmap <C-p> :tabprevious<CR>
-nmap <C-s> :tabnew<CR>
-nmap <C-x> :tabclose<CR>
+nnoremap <C-n> :tabnext<CR>			" Next tab
+nnoremap <C-p> :tabprev<CR>			" Previous tab
 nnoremap <C-e> :NERDTreeToggle<CR>
 
 " Autocommands -----------------------------------------------------------------
@@ -87,57 +88,16 @@ augroup autosourcing			" Automatically source the vimrc
 	autocmd BufWritePost ~/dotfiles/init.vim source %
 augroup END
 
+au BufEnter *.md source ~/dotfiles/markdown.vim
+au BufEnter *.R source ~/dotfiles/rfiles.vim
+au BufEnter *.Rmd source ~/dotfiles/rfiles.vim
+
 au BufEnter *.txt setlocal fo=awtq tw=80
 
 au BufEnter *.tex setlocal fo=awtq tw=80
 au BufEnter *.tex nnoremap <F5> :!xelatex % %:r.pdf<Enter>
 au BufEnter *.tex nnoremap <F6> :!mupdf %:r.pdf &<Enter>
 
-au BufEnter *.md setlocal fo=awtq tw=80
-let g:pandoc#folding#fold_yaml = 1
-
-nmap <F5> :Pandoc! beamer --pdf-engine=xelatex 
-			\ -i
-			\ --from markdown
-			\ --variable lang=es-MX
-			\ --variable aspectratio=169 
-			\ --variable theme="Boadilla" 
-			\ --variable colortheme="dolphin" 
-			\ --variable innertheme="rectangles"
-			\ --variable mainfont="Source Sans 3" 
-			\ --variable mathfont="TeX Gyre Pagella Math" 
-			\ --variable fontsize=11pt<CR><CR>
-
-nmap <F6> :Pandoc! pdf --pdf-engine=xelatex
-			\ --variable lang=es-MX
-			\ --variable mainfont="Source Sans 3"
-			\ --variable mathfont="TeX Gyre Pagella Math"
-			\ --variable fontsize=12pt
-			\ --variable linestretch=1.25
-			\ --variable geometry:letterpaper
-			\ --variable geometry:margin="1in"<CR><CR>
-
-nmap <F7> :Pandoc odt -f markdown 
-			\ -F ~/.vim/bundle/zotcite/python3/zotref.py 
-			\ --citeproc 
-			\ --csl ~/dotfiles/apa.csl 
-			\ --variable lang=es-MX 
-			\ --reference-doc=~/dotfiles/coltam.odt<CR><CR>
-
-nmap <F8> :Pandoc odt -f markdown 
-			\ -F ~/.vim/bundle/zotcite/python3/zotref.py 
-			\ --citeproc 
-			\ --csl ~/dotfiles/apa.csl 
-			\ --variable lang=es-MX 
-			\ --reference-doc=~/dotfiles/imprimible.odt<CR><CR>
-
-au BufEnter *.R iabbrev %% %>%
-au BufEnter *.R set foldmethod=marker
-au BufEnter *.R setlocal fo=acrqwlj tw=80
-
-au BufEnter *.Rmd setlocal fo=awtq tw=80
-au BufEnter *.Rmd iabbrev %% %>%
-au BufNewFile *.Rmd r ~/dotfiles/template.Rmd
 
 set autoindent
 
@@ -157,7 +117,7 @@ let R_external_term = 1
 let g:syntastic_enable_r_lintr_checker = 1
 let g:syntastic_r_checkers = ['lintr']
 
-let g:syntastic_r_lintr_linters = "with_defaults(no_tab_linter = NULL, infix_spaces_linter = NULL)"
+let g:syntastic_r_lintr_linters = "with_defaults(no_tab_linter = NULL)"
 
 " Vimtex
 let g:tex_flavor='latex'

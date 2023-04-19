@@ -28,6 +28,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'vim-pandoc/vim-pandoc'		" for integration with pandoc
 Plugin 'vim-pandoc/vim-pandoc-syntax'	" For syntax checking
 Plugin 'frazrepo/vim-rainbow'
+Plugin 'SirVer/ultisnips' 		" For code snippets
 
 call vundle#end()
 filetype plugin indent on
@@ -140,3 +141,9 @@ autocmd! User GoyoLeave Limelight!
 nmap <Leader>g :Goyo<CR>
 
 let g:rainbow_active = 1
+
+" Ultisnips
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+let g:UltiSnipsSnippetDirectories=["UltiSnips", "my_snippets"]

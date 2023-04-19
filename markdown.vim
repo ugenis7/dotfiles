@@ -13,7 +13,7 @@ nmap <F5> :Pandoc! beamer --pdf-engine=xelatex
 			\ --variable innertheme="rectangles"
 			\ --variable mainfont="Lato" 
 			\ --variable mathfont="TeX Gyre Pagella Math" 
-			\ --variable fontsize=11pt<CR><CR>
+			\ --variable fontsize=12pt<CR><CR>
 
 " Texto en pdf
 

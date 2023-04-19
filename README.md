@@ -7,20 +7,25 @@ sudo dnf update --refresh
 ```
 
 ## Theme:
-- Apps: NewAdwaita-Slim
-- Icons: Flat-Remix-Green
-- GNOME Shell: Flat-Remix-Blue-fullPanel
-- Background: tri-fadeno.jpg
+- Cursor: Breeze Snow
+- Apps: Flat-Remix-Orange-Dark
+- Icons: Flat-Remix-Orange-Dark-fullPanel
+- GNOME Shell: Flat-Remix-Organe-Dark-fullPanel
 
 ## Extensions:
 - Pomodoro
+- Appindicator and KStatusNotifierItem Support
 - Coverflow alt-tab
-- gTile
-- OpenWeather
-- Trayicons Reloaded
+- Notification Banner Reloaded
 - User themes
 
 ## Fonts:
+- Interfaz: Lato Medium 12
+- Documento: Libre Caslon Text Regular 12
+- Monoespaciado: Fira Code Retina 15
+- Heredadas: Noto Sans Display Regular 15
+- Escalado: 1.20
+
 - Source Sans Pro
 - Source Serif Pro
 - Source Code Pro
@@ -32,12 +37,10 @@ sudo dnf update --refresh
 - Noto Sans
 
 ## Hotkeys:
-- Chrom: Super + S
 - Calculator: Super + C
 - Keepassxc: Super + z
 - Thunar: Super + F
 - Kitty: Super + T
-- Minimize: Super + Down
 - Hide windows: Super + D
 - Toggle maximize: Super + up
 - Fullscreen mode: F11
@@ -47,7 +50,7 @@ sudo dnf update --refresh
 ## Enable RPM Fedora Fusion
 
 ```bash
-sudo dnf install --nogpgcheck https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-33.noarch.rpm
+sudo dnf install --nogpgcheck https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-38.noarch.rpm
 sudo dnf install --nogpgcheck https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-t1.noarch.rpm
 ```
 
@@ -72,6 +75,7 @@ sudo dnf install \
 ```
 
 # Install software
+
 - Bleachbit
 - Calibre
 - Cozy
@@ -147,7 +151,7 @@ tidyquant
 writexl
 xtable
 
-# Acciones personalizadas
+# Acciones personalizadas Thunar
 
 Separar: /home/ugenis/dotfiles/pdfsep.sh %f
 Unir: pdfunite %F $(mktemp -p %d --suffix=.pdf Merged_pdf_XXXXXX)

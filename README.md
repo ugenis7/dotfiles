@@ -3,6 +3,17 @@
 ## First things first
 
 ```bash
+sudo vi /etc/dnf/dnf.conf
+```
+
+Add these lines:
+
+fastestmirror=true
+deltarm=true
+max_parallel_downloads=10
+
+
+```bash
 sudo dnf update --refresh
 ```
 

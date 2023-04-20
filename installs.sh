@@ -1,5 +1,5 @@
 #!/bin/bash
-sudo dnf install zsh
+sudo dnf install zsh util-linux-user
 chsh -s $(which zsh)
 sudo chsh -s $(which zsh)
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
@@ -28,6 +28,7 @@ sudo dnf install -y \
 	kernel-devel \
 	kernel-modules \
 	kernel-modules-extra \
+	pip \
 	R \
 	Thunar \
 	Thunar-devel \
@@ -48,11 +49,12 @@ sudo dnf install \
 	gimp \
 	inkscape \
 	mediainfo \
-	youtube-dl \
 	nfoview \
 	pandoc \
 	mpv \
 	ImageMagick
+
+pip install yt-dlp
 
 # Needed to install tidyverse and other R packages
 sudo dnf install \

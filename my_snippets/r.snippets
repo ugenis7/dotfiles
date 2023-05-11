@@ -1,0 +1,48 @@
+snippet lib
+library(${1:tidyverse})
+$0
+endsnippet
+
+snippet %
+%>%
+$0
+endsnippet
+
+snippet ggplot
+ggplot(${1:db}, aes(${2:x}, ${3:y})) +
+geom_$0()
+endsnippet
+
+snippet fold "Sección"
+# ${1:Sección}
+# -----------------------------------------------------------------------{{{
+${0:${VISUAL}}
+# -----------------------------------------------------------------------}}}
+endsnippet
+
+snippet for "for loop"
+for (${1:item} in ${2:list}) {
+	${0:${VISUAL}}
+}
+endsnippet
+
+snippet fun "Function definition"
+${1:name} <- function ($2) {
+	${0:${VISUAL}}
+}
+endsnippet
+
+snippet readcsv
+read_csv("${1:archivo}.csv", locale = locale(encoding = "Latin1")) $0
+endsnippet
+
+snippet casewhen
+case_when(
+${1:variable} == "${2:condicion}" ~ "${3:Nuevo valor}",
+TRUE ~ "${4:Valor por defecto}"
+)
+endsnippet
+
+snippet case
+"${2:Condicion}" ~ "${3:Nuevo valor}",
+endsnippet

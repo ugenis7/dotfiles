@@ -15,8 +15,6 @@ Plugin 'dhruvasagar/vim-table-mode'     " Tables in Markdown
 Plugin 'godlygeek/tabular'		" For aligning in tabs
 Plugin 'jalvesaq/Nvim-R'		" For using R inside nvim
 Plugin 'jalvesaq/zotcite'		" Citing with Zotero
-Plugin 'junegunn/goyo.vim'		" Clean environment
-Plugin 'junegunn/limelight.vim'		" Focus writing
 Plugin 'lervag/vimtex'			" Better support for latex
 Plugin 'preservim/nerdtree'		" More complex file manager
 Plugin 'scrooloose/syntastic'		" For style linting
@@ -32,7 +30,6 @@ Plugin 'SirVer/ultisnips' 		" For code snippets
 
 call vundle#end()
 filetype plugin indent on
-
 
 " Visuals ----------------------------------------------------------------------
 syntax enable
@@ -66,7 +63,7 @@ set incsearch
 let mapleader=","
 let maplocalleader = ','
 
-nmap <leader>ev :tabedit ~/dotfiles/init.vim<cr> " Edit this file
+nmap <leader>ev :tabedit ~/dotfiles/nvim/init.vim<cr> " Edit this file
 
 nnoremap <silent> <leader><space> :nohlsearch<cr> " Stop highlighting a search
 
@@ -86,20 +83,19 @@ nnoremap <C-e> :NERDTreeToggle<CR>
 " Autocommands -----------------------------------------------------------------
 augroup autosourcing			" Automatically source the vimrc
 	autocmd!
-	autocmd BufWritePost ~/dotfiles/init.vim source %
+	autocmd BufWritePost ~/dotfiles/nvim/init.vim source %
 augroup END
 
-au BufEnter *.md source ~/dotfiles/markdown.vim
-au BufEnter *.R source ~/dotfiles/rfiles.vim
-au BufEnter *.Rmd source ~/dotfiles/rfiles.vim
-au BufEnter *.Rmd source ~/dotfiles/markdown.vim
+au BufEnter *.md source ~/dotfiles/nvim/markdown.vim
+au BufEnter *.R source ~/dotfiles/nvim/rfiles.vim
+au BufEnter *.Rmd source ~/dotfiles/nvim/rfiles.vim
+au BufEnter *.Rmd source ~/dotfiles/nvim/markdown.vim
 
 au BufEnter *.txt setlocal fo=awtq tw=80
 
 au BufEnter *.tex setlocal fo=awtq tw=80
 au BufEnter *.tex nnoremap <F5> :!xelatex % %:r.pdf<Enter>
 au BufEnter *.tex nnoremap <F6> :!mupdf %:r.pdf &<Enter>
-
 
 set autoindent
 

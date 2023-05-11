@@ -92,6 +92,7 @@ augroup END
 au BufEnter *.md source ~/dotfiles/markdown.vim
 au BufEnter *.R source ~/dotfiles/rfiles.vim
 au BufEnter *.Rmd source ~/dotfiles/rfiles.vim
+au BufEnter *.Rmd source ~/dotfiles/markdown.vim
 
 au BufEnter *.txt setlocal fo=awtq tw=80
 

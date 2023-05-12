@@ -108,8 +108,15 @@ let R_assign = 0			" Manual <- assignment
 
 let R_indent_commented = 0
 let R_args = ['--no-save', '--quiet']
+let R_clear_line = 1
+
+let R_openpdf = 1
+let R_openhtml = 2
+
+let R_hi_fun_paren = 1
 
 let R_external_term = 1
+let Rout_more_colors = 1
 
 " Linting ----------------------------------------------------------------------
 let g:syntastic_enable_r_lintr_checker = 1

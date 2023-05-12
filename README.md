@@ -124,33 +124,32 @@ sudo dnf install \
 
 # R packages
 
-tidyverse
-lubridate
-Benchmarking
-
-RColorBrewer
-XML
-broom
-foreign
-frontier
-gghighlight
-ggrepel
-ggridges
-hasseDiagram
-httr
-jsonlite
-knitr
-lmtest
-modelr
-npsf
-openxlsx
-pals
-readxl
-rjson
-rjstat
-scales
-sf
-stringr
-tidyquant
-writexl
-xtable
+- tidyverse
+- lubridate
+- Benchmarking
+- RColorBrewer
+- XML
+- broom
+- foreign
+- frontier
+- gghighlight
+- ggrepel
+- ggridges
+- hasseDiagram
+- httr
+- jsonlite
+- knitr
+- lmtest
+- modelr
+- npsf
+- openxlsx
+- pals
+- readxl
+- rjson
+- rjstat
+- scales
+- sf
+- stringr
+- tidyquant
+- writexl
+- xtable

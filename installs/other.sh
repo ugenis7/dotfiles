@@ -2,10 +2,11 @@
 
 sudo dnf install -y \
 	ffmpeg \
-	gimp \
-	inkscape \
 	mediainfo \
 	nfoview \
+	exiftool \
+	gimp \
+	inkscape \
 	ImageMagick
 
 pip install yt-dlp

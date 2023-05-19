@@ -45,6 +45,7 @@ sudo dnf install --nogpgcheck https://download1.rpmfusion.org/nonfree/fedora/rpm
 - Escalado: 1.20
 
 Also cool:
+
 - Source Sans Pro
 - Source Serif Pro
 - Source Code Pro
@@ -54,6 +55,19 @@ Also cool:
 - Merriweather
 - Noto Serif
 - Noto Sans
+- Encode Sans
+- Indivisa Text Sans / Serif
+- Libre Caslon
+- Libre Baskerville
+
+Microsoft:
+
+- Arial
+- Calibri
+- Cambria
+- Tahoma
+- Times New Roman
+- Verdana
 
 ## Hotkeys:
 

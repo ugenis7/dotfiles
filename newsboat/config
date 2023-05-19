@@ -1,0 +1,49 @@
+auto-reload yes
+reload-threads 100
+browser "firefox --new-tab %u 2>/dev/null &"
+article-sort-order date-asc
+
+feedlist-format     "%n %t %-11u"
+articlelist-format  "%f %-80t %D"
+
+color listnormal color8 black
+color listfocus black white
+color listnormal_unread white black
+color listfocus_unread black white bold
+
+color title white blue
+color info white blue
+
+bind-key g home
+bind-key G end
+bind-key j down
+bind-key k up
+bind-key j next articlelist
+bind-key k prev articlelist
+bind-key } pagedown
+bind-key { pageup
+bind-key L next-feed articlelist
+bind-key H prev-feed articlelist
+
+# highlights
+highlight all "---.*---" color11 black bold
+highlight feedlist " \\(0\/0\\)" black black
+
+highlight article "(^Feed:)" color7 default bold
+highlight article "Title:.*" white color8 standout bold
+highlight article "https?://[^ ]+" color3 default
+highlight article "\\[image\\ [0-9]+.*\\]" color8 default
+highlight article "\\[[0-9][0-9]*\\]" color8 default bold
+highlight article "(^Date:|^Link:|^Author:|^Podcast).*" color8 default bold
+
+text-width 80
+
+macro y set browser "kitty mpv --fs '%u' 2>/dev/null &" ;\
+open-in-browser ; \
+set browser "firefox --new-tab %u 2>/dev/null &"
+
+macro f set browser "firefox --new-tab %u 2>/dev/null &"
+macro i set browser "feh -FZ %u 2>/dev/null &"
+macro l set browser "kitty lynx %u 2>/dev/null &"
+macro m set browser "mpv --fs '%u' 2>/dev/null &"
+macro r set browser "reader -i %u 2>/dev/null | less -S &"

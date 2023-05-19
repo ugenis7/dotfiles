@@ -10,18 +10,26 @@ sudo dnf install -y \
 	Thunar \
 	Thunar-devel \
 	Thunar-docs \
-	exfat-utils \
-	fuse-exfat \
 	gnome-shell-extension-pomodoro \
 	gnome-tweaks \
 	gparted \
 	gvfs-mtp \
+	exfat-utils \
+	fuse-exfat \
 	deja-dup \
 	mupdf \
 	neovim \
-	pip \
 	python3-neovim \
+	pip \
 	pandoc \
 	mpv \
+	htop \
+	cmus \
+	vifm \
+	newsboat \
+	lynx \
+	zathura \
+	feh \
+	zathura-pdf-mupdf \
 	tlp \
 	tlp-rdw

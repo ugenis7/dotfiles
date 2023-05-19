@@ -1,0 +1,15 @@
+[ ] Script para crear la estructura de los proyectos
+[ ] Hacer un plugin para todo.txt en Neovim
+[ ] Manejar mejor mis Templates
+[ ] Script para mostrar las diferencias entre los dotfiles del repositorio y los 
+locales
+[ ] Script para copiar atuomáticamente los dotfiles desde el repositorio
+[ ] Script para copiar atuomáticamente los dotfiles hacia el repositorio
+[ ] Pasar los dotfiles de newsboat
+[ ] Pasar los dotfiles de cmus
+[ ] Pasar los dotfiles de vifm
+[ ] Instalar y configurar neomutt
+[ ] Corregir el .local/bin en .zshrc
+[ ] Mejorar .zhrc
+[ ] Mejorar .Rprofile
+[ ] Incluir conky

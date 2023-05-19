@@ -25,6 +25,7 @@ Plugin 'vim-airline/vim-airline'	" The powerline
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'vim-pandoc/vim-pandoc'		" for integration with pandoc
 Plugin 'vim-pandoc/vim-pandoc-syntax'	" For syntax checking
+Plugin 'vim-pandoc/vim-rmarkdown'
 Plugin 'frazrepo/vim-rainbow'
 Plugin 'SirVer/ultisnips' 		" For code snippets
 
@@ -71,7 +72,7 @@ nnoremap <C-Tab> :bn<CR>                        " Switching across buffers
 nnoremap <C-S-Tab> :bp<CR>                      " Switching across buffers
 nnoremap <leader>1 :b1<CR> 			" Go to main buffer
 nnoremap <C-t> :enew<CR>			" New buffer
-nnoremap <C-w> :bd<CR>				" Close buffer
+nnoremap <C-q> :bd<CR>				" Close buffer
 nnoremap <space> za				" Toggle folds
 
 nmap <F9> :make<cr>
@@ -87,9 +88,8 @@ augroup autosourcing			" Automatically source the vimrc
 augroup END
 
 au BufEnter *.md source ~/dotfiles/nvim/markdown.vim
-au BufEnter *.R source ~/dotfiles/nvim/rfiles.vim
-au BufEnter *.Rmd source ~/dotfiles/nvim/rfiles.vim
 au BufEnter *.Rmd source ~/dotfiles/nvim/markdown.vim
+au BufEnter *.R source ~/dotfiles/nvim/rfiles.vim
 
 au BufEnter *.txt setlocal fo=awtq tw=80
 

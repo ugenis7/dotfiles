@@ -16,9 +16,13 @@ DISABLE_AUTO_UPDATE="true"	# Disable auto-update of omz
 plugins=(
   git
   dnf
+  colorize
+  vi-mode
 )
 
 source $ZSH/oh-my-zsh.sh
 
 # ssh
 export SSH_KEY_PATH="~/.ssh/rsa_id"
+
+alias cat=ccat

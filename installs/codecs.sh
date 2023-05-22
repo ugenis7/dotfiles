@@ -1,6 +1,6 @@
 #!/bin/env bash
 #
-sudo dnf install -y \
+sudo dnf install \
 	gstreamer-ffmpeg \
 	gstreamer1-libav \
 	gstreamer-plugin* \

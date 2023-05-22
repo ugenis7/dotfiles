@@ -1,6 +1,6 @@
 #!/bin/env bash
 
-sudo dnf install -y \
+sudo dnf install \
 	dnf-plugin-system-upgrade \
 	kernel-core \
 	kernel-devel \

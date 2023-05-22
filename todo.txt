@@ -8,8 +8,8 @@ locales
 [ ] Pasar los dotfiles de newsboat
 [ ] Pasar los dotfiles de cmus
 [ ] Pasar los dotfiles de vifm
+[ ] Pasar los dotfiles de conky
 [ ] Instalar y configurar neomutt
 [ ] Corregir el .local/bin en .zshrc
-[ ] Mejorar .zhrc
+[ ] Mejorar .zshrc
 [ ] Mejorar .Rprofile
-[ ] Incluir conky

@@ -1,10 +1,9 @@
 #!/bin/env bash
 
-sudo dnf install -y \
+sudo dnf install \
 	ffmpeg \
 	mediainfo \
 	nfoview \
-	exiftool \
 	gimp \
 	inkscape \
 	ImageMagick

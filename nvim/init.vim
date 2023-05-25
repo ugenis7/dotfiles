@@ -20,7 +20,6 @@ Plugin 'preservim/nerdtree'		" More complex file manager
 Plugin 'scrooloose/syntastic'		" For style linting
 Plugin 'tpope/vim-fugitive'		" Git integration
 Plugin 'tpope/vim-surround'		" For surrounding text
-Plugin 'tpope/vim-vinegar'		" File manager
 Plugin 'vim-airline/vim-airline'	" The powerline
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'vim-pandoc/vim-pandoc'		" for integration with pandoc
@@ -135,16 +134,6 @@ let g:table_mode_corner='|'
 
 " NerdTree
 let g:netrw_bufsettings="noma nomod nonu nobl nowrap ro rnu"
-
-" Goyo
-let g:goyo_width=85
-
-autocmd! User GoyoEnter Limelight
-autocmd! User GoyoLeave Limelight!
-
-nmap <Leader>g :Goyo<CR>
-
-let g:rainbow_active = 1
 
 " Ultisnips
 let g:UltiSnipsExpandTrigger="<tab>"

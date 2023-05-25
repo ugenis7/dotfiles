@@ -26,3 +26,6 @@ source $ZSH/oh-my-zsh.sh
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 alias cat=ccat
+
+export GEM_HOME="$HOME/gems"
+export PATH="$HOME/gems/bin:$HOME/bin:$PATH"

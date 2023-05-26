@@ -1,6 +1,5 @@
 [ ] Script para crear la estructura de los proyectos
 [ ] Hacer un plugin para todo.txt en Neovim
-[ ] Manejar mejor mis Templates
 [ ] Script para mostrar las diferencias entre los dotfiles del repositorio y los 
 locales
 [ ] Script para copiar atuomáticamente los dotfiles desde el repositorio
@@ -13,3 +12,6 @@ locales
 [ ] Corregir el .local/bin en .zshrc
 [ ] Mejorar .zshrc
 [ ] Mejorar .Rprofile
+[ ] Manejar mejor mis Templates
+[ ] Hacer un script que compare o sincronice Templates
+[ ] Incorporar fugitive en mi workflow

@@ -11,7 +11,7 @@ nmap <F5> :Pandoc! beamer --pdf-engine=xelatex
 			\ --variable theme="Boadilla" 
 			\ --variable colortheme="beaver" 
 			\ --variable innertheme="rectangles"
-			\ --variable mainfont="Lato" 
+			\ --variable mainfont="Encode Sans" 
 			\ --variable mathfont="TeX Gyre Pagella Math" 
 			\ --variable fontsize=12pt<CR><CR>
 

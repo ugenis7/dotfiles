@@ -3,6 +3,11 @@ let g:pandoc#folding#fold_yaml = 1
 
 " Presentación de Beamer
 
+nmap <F4> :Pandoc! pdf
+			\ -i
+			\ --from markdown
+			\ --variable lang=es-MX<CR><CR>
+
 nmap <F5> :Pandoc! beamer --pdf-engine=xelatex 
 			\ -i
 			\ --from markdown
@@ -34,9 +39,9 @@ nmap <F6> :Pandoc! pdf --pdf-engine=xelatex
 nmap <F7> :Pandoc odt -f markdown 
 			\ -F ~/.vim/bundle/zotcite/python3/zotref.py 
 			\ --citeproc 
-			\ --csl ~/dotfiles/apa.csl 
+			\ --csl ~/dotfiles/pandoc-templates/apa.csl
 			\ --variable lang=es-MX 
-			\ --reference-doc=~/dotfiles/coltam.odt<CR><CR>
+			\ --reference-doc=~/dotfiles/pandoc-templates/coltam.odt<CR><CR>
 
 " Texto imprimible
 

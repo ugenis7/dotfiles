@@ -24,7 +24,6 @@ Plugin 'vim-airline/vim-airline'	" The powerline
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'vim-pandoc/vim-pandoc'		" for integration with pandoc
 Plugin 'vim-pandoc/vim-pandoc-syntax'	" For syntax checking
-Plugin 'vim-pandoc/vim-rmarkdown'
 Plugin 'frazrepo/vim-rainbow'
 Plugin 'SirVer/ultisnips' 		" For code snippets
 

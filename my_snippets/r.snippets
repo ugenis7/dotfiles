@@ -9,7 +9,7 @@ $0
 endsnippet
 
 snippet ggplot
-ggplot(${1:db}, aes(${2:x}, ${3:y})) +
+ggplot(aes(${2:x}, ${3:y})) +
 geom_$0()
 endsnippet
 
@@ -32,8 +32,9 @@ ${1:name} <- function ($2) {
 }
 endsnippet
 
-snippet readcsv
-read_csv("${1:archivo}.csv", locale = locale(encoding = "Latin1")) $0
+snippet db
+db <- read_csv("${1:archivo}", locale = locale(encoding = "Latin1"))
+$0
 endsnippet
 
 snippet casewhen

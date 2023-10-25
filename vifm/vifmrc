@@ -171,6 +171,14 @@ command! reload :write | restart full
 " program.
 
 " Pdf
+filextype {*.epub},<application/epub>
+	\ {Open in Foliate} 
+	\ com.github.johnfactotum.Foliate %c &,
+	\ {Open in Evince} 
+	\ evince %c &,
+fileviewer {*.pdf},<application/pdf> pdftotext -nopgbrk %c -
+
+" Pdf
 filextype {*.pdf},<application/pdf>
 	\ {Open in MuPDF} 
 	\ mupdf %c &,

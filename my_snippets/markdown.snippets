@@ -20,16 +20,30 @@ snippet yamldoc
 ---
 title: "${1:Título}"
 author: "${2:Dr. Ulises Genis Cuevas}"
-geometry: margin=1.5cm
-fontsize: 10pt
+fontsize: 11pt
 mainfont: "Encode Sans"
 mathfont: "TeX Gyre Pagella Math"
 linestretch: 1.15
 lang: "es-MX"
-classoption: twocolumn
-output:
-  pdf_document:
-    latex_engine: xelatex
+geometry:
+- letterpaper
+- margin=2cm
+---
+
+# $0
+endsnippet
+
+snippet yamldiapos
+---
+title: "${1:Título}"
+author: "${2:Dr. Ulises Genis Cuevas}"
+lang: "es-MX"
+aspectratio: 169
+theme: Boadilla
+innertheme: rectangles
+mainfont: "Encode Sans"
+mathfont: "TeX Gyre Pagella Math"
+fontsize: 12pt
 ---
 
 # $0

@@ -32,9 +32,10 @@ sudo dnf install --nogpgcheck https://download1.rpmfusion.org/nonfree/fedora/rpm
 
 - Pomodoro
 - Appindicator and KStatusNotifierItem Support
-- Coverflow alt-tab
 - Notification Banner Reloaded
 - User themes
+- Activate Window by Title
+- Bluetooth quick connect
 
 ## Fonts:
 
@@ -109,10 +110,8 @@ sudo dnf install \
 # Install software
 
 - Bleachbit
-- Cozy
 - Darktable
 - Deja Dup
-- FileZilla
 - Foliate
 - GIMP
 - GParted
@@ -126,7 +125,6 @@ sudo dnf install \
 - Oh-my-zsh
 - PDF Mod
 - Pandoc
-- Peazip
 - QGIS
 - R
 - SoundKonverter

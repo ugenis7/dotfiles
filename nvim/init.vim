@@ -7,14 +7,16 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-"Plugin 'jiangmiao/auto-pairs'
 Plugin 'VundleVim/Vundle.vim' 		" This plugin manager
+Plugin 'SirVer/ultisnips' 		" For code snippets
 Plugin 'chrisbra/csv.vim'		" For viewing csv files
 Plugin 'chriskempson/base16-vim'	" Better colors
 Plugin 'dhruvasagar/vim-table-mode'     " Tables in Markdown
+Plugin 'frazrepo/vim-rainbow'
 Plugin 'godlygeek/tabular'		" For aligning in tabs
 Plugin 'jalvesaq/Nvim-R'		" For using R inside nvim
 Plugin 'jalvesaq/zotcite'		" Citing with Zotero
+Plugin 'jiangmiao/auto-pairs'
 Plugin 'lervag/vimtex'			" Better support for latex
 Plugin 'preservim/nerdtree'		" More complex file manager
 Plugin 'scrooloose/syntastic'		" For style linting
@@ -24,8 +26,6 @@ Plugin 'vim-airline/vim-airline'	" The powerline
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'vim-pandoc/vim-pandoc'		" for integration with pandoc
 Plugin 'vim-pandoc/vim-pandoc-syntax'	" For syntax checking
-Plugin 'frazrepo/vim-rainbow'
-Plugin 'SirVer/ultisnips' 		" For code snippets
 
 call vundle#end()
 filetype plugin indent on

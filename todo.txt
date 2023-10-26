@@ -4,11 +4,7 @@
 locales
 [ ] Script para copiar atuomáticamente los dotfiles desde el repositorio
 [ ] Script para copiar atuomáticamente los dotfiles hacia el repositorio
-[ ] Pasar los dotfiles de newsboat
-[ ] Pasar los dotfiles de cmus
 [ ] Pasar los dotfiles de vifm
-[ ] Pasar los dotfiles de conky
-[ ] Instalar y configurar neomutt
 [ ] Corregir el .local/bin en .zshrc
 [ ] Mejorar .zshrc
 [ ] Mejorar .Rprofile

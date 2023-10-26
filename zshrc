@@ -1,31 +1,24 @@
-# Path to your oh-my-zsh installation.
-export ZSH=~/.oh-my-zsh
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=100
+SAVEHIST=1000
+setopt autocd
+unsetopt extendedglob
+bindkey -e
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '/home/coltam05/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+
+PROMPT="%~ » "
 
 export TERM="xterm-kitty"
-
-BASE16_SHELL="$HOME/.config/base16-shell/"
-[ -n "$PS1" ] && \
-    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
-        eval "$("$BASE16_SHELL/profile_helper.sh")"
-
-ZSH_THEME="agnoster"		# Oh-my-zsh theme
-
-DISABLE_AUTO_UPDATE="true"	# Disable auto-update of omz
-
-# Plugins for omz
-plugins=(
-  git
-  dnf
-  colorize
-  vi-mode
-)
-
-source $ZSH/oh-my-zsh.sh
-
-# ssh
+export PATH="/home/coltam05/.local/bin:$PATH"
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-alias cat=ccat
+alias ls='ls --color=auto -gGhX --group-directories-first --time-style=long-iso'
+alias zshrc='nvim ~/.zshrc'
 
-export GEM_HOME="$HOME/gems"
-export PATH="$HOME/gems/bin:$HOME/bin:$PATH"

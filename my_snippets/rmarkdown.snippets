@@ -13,11 +13,11 @@ title: "${1:Título}"
 author: "${2:Dr. Ulises Genis}"
 geometry:
 - letterpaper
-- margin=1in
+- margin=2cm
 fontsize: 10pt
-mainfont: "Lato"
+mainfont: "Libre Caslon text"
 mathfont: "TeX Gyre Pagella Math"
-linestretch: 1.2
+linestretch: 1
 lang: "es-MX"
 classoption: twocolumn
 header-includes:
@@ -36,8 +36,8 @@ header-includes:
 - \usepackage{makecell}
 - \usepackage{xcolor}
 output:
-	pdf_document:
-		latex_engine: xelatex
+  pdf_document:
+    latex_engine: xelatex
 ---
 
 $0
@@ -47,12 +47,24 @@ snippet setupchunk
 \`\`\`\{r setup, include = FALSE\}
 library(tidyverse)
 library(scales)
+library(extrafont)
 library(kableExtra)
 
 knitr::opts_chunk$set(echo = FALSE, fig.align = "center", message = FALSE)
 
-tema <- theme_minimal(base_size = 12) +
-	theme(panel.grid = element_blank())
+options(knitr.table.format = "latex",
+	kable_styling_full_width = TRUE,
+	kable_styling_latex_options = c("hold_position"))
+
+kable <- function(...) kableExtra::kbl(..., booktabs = TRUE) %>% kable_styling()
+
+loadfonts()
+
+font_import(pattern = "LibreCaslonText", prompt = FALSE)
+
+ggplot <- function(...) ggplot2::ggplot(...) +
+	theme_minimal(base_size = 12, base_family = "Libre Caslon Text") +
+	theme(panel.grid = element_blank(), legend.position = "bottom")
 
 db <- read_csv("${1:archivo}")
 \`\`\`

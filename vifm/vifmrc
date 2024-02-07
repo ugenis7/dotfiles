@@ -173,13 +173,13 @@ command! reload :write | restart full
 " You can also add %CLEAR if you want to clear screen before running FUSE
 " program.
 
-" Pdf
+" Epub
 filextype {*.epub},<application/epub>
 	\ {Open in Foliate} 
-	\ com.github.johnfactotum.Foliate %c &,
+	\ foliate %c &,
 	\ {Open in Evince} 
 	\ evince %c &,
-fileviewer {*.pdf},<application/pdf> pdftotext -nopgbrk %c -
+fileviewer {*.epub},<application/epub> pandoc -f epub -t markdown %c
 
 " Pdf
 filextype {*.pdf},<application/pdf>
@@ -189,25 +189,11 @@ filextype {*.pdf},<application/pdf>
 	\ evince %c &,
 fileviewer {*.pdf},<application/pdf> pdftotext -nopgbrk %c -
 
-" PostScript
-filextype {*.ps,*.eps,*.ps.gz},<application/postscript>
-        \ {View in zathura}
-        \ zathura %f,
-        \ {View in gv}
-        \ gv %c %i &,
-
-" Djvu
-filextype {*.djvu},<image/vnd.djvu>
-        \ {View in zathura}
-        \ zathura %f,
-        \ {View in apvlv}
-        \ apvlv %f,
-
 " Audio
-filetype {*.wav,*.mp3,*.flac,*.m4a,*.wma,*.ape,*.ac3,*.og[agx],*.spx,*.opus},
+filextype {*.wav,*.mp3,*.flac,*.m4a,*.wma,*.ape,*.ac3,*.og[agx],*.spx,*.opus},
         \<audio/*>
        \ {Play using mpv}
-       \ mpv %c 2>/dev/null &,
+       \ kitty mpv %c 2>/dev/null &,
        \ {Play using ffplay}
        \ ffplay -nodisp -autoexit %c,
        \ {Play using MPlayer}
@@ -231,8 +217,7 @@ filextype {*.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,
 fileviewer {*.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,
            \*.fl[icv],*.m2v,*.mov,*.webm,*.ts,*.mts,*.m4v,*.r[am],*.qt,*.divx,
            \*.as[fx]},
-          \<video/*>
-         \ ffprobe -pretty %c 2>&1
+          \<video/*> mediainfo
 
 " Web
 filextype {*.html,*.htm},<text/html>
@@ -241,13 +226,6 @@ filextype {*.html,*.htm},<text/html>
         \ {Open with uzbl}
         \ uzbl-browser %f %i &,
 filetype {*.html,*.htm},<text/html> links, lynx
-
-" Object
-filetype {*.o},<application/x-object> nm %f | less
-
-" Man page
-filetype {*.[1-8]},<text/troff> man ./%c
-fileviewer {*.[1-8]},<text/troff> man ./%c | col -b
 
 " Images
 filextype {*.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm},<image/*>
@@ -262,111 +240,37 @@ filextype {*.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm},<image/*>
 fileviewer {*.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm},<image/*>
          \ mediainfo %f
 
-" OpenRaster
-filextype *.ora
-        \ {Edit in MyPaint}
-        \ mypaint %f,
-
-" Mindmap
-filextype *.vym
-        \ {Open with VYM}
-        \ vym %f &,
-
-" MD5
-filetype *.md5
-       \ {Check MD5 hash sum}
-       \ md5sum -c %f %S,
-
-" SHA1
-filetype *.sha1
-       \ {Check SHA1 hash sum}
-       \ sha1sum -c %f %S,
-
-" SHA256
-filetype *.sha256
-       \ {Check SHA256 hash sum}
-       \ sha256sum -c %f %S,
-
-" SHA512
-filetype *.sha512
-       \ {Check SHA512 hash sum}
-       \ sha512sum -c %f %S,
-
-" GPG signature
-filetype {*.asc},<application/pgp-signature>
-       \ {Check signature}
-       \ !!gpg --verify %c,
+" Djvu
+filextype {*.djvu},<image/vnd.djvu>
+        \ {View in zathura}
+        \ zathura %f,
+        \ {View in apvlv}
+        \ apvlv %f,
 
 " Torrent
 filetype {*.torrent},<application/x-bittorrent> ktorrent %f &
 fileviewer {*.torrent},<application/x-bittorrent> dumptorrent -v %c
 
-" FuseZipMount
+" Zip
 filetype {*.zip,*.jar,*.war,*.ear,*.oxt,*.apkg},
         \<application/zip,application/java-archive>
+       \ {Extract here}
+       \ unzip %c -d extracted,
        \ {Mount with fuse-zip}
        \ FUSE_MOUNT|fuse-zip %SOURCE_FILE %DESTINATION_DIR,
        \ {View contents}
        \ zip -sf %c | less,
-       \ {Extract here}
-       \ tar -xf %c,
 fileviewer *.zip,*.jar,*.war,*.ear,*.oxt zip -sf %c
 
-" ArchiveMount
-filetype {*.tar,*.tar.bz2,*.tbz2,*.tgz,*.tar.gz,*.tar.xz,*.txz},
-        \<application/x-tar>
-       \ {Mount with archivemount}
-       \ FUSE_MOUNT|archivemount %SOURCE_FILE %DESTINATION_DIR,
-fileviewer *.tgz,*.tar.gz tar -tzf %c
-fileviewer *.tar.bz2,*.tbz2 tar -tjf %c
-fileviewer *.tar.txz,*.txz xz --list %c
-fileviewer {*.tar},<application/x-tar> tar -tf %c
-
-" Rar2FsMount and rar archives
-filetype {*.rar},<application/x-rar>
-       \ {Mount with rar2fs}
-       \ FUSE_MOUNT|rar2fs %SOURCE_FILE %DESTINATION_DIR,
-fileviewer {*.rar},<application/x-rar> unrar v %c
-
-" IsoMount
-filetype {*.iso},<application/x-iso9660-image>
-       \ {Mount with fuseiso}
-       \ FUSE_MOUNT|fuseiso %SOURCE_FILE %DESTINATION_DIR,
-
-" SshMount
-filetype *.ssh
-       \ {Mount with sshfs}
-       \ FUSE_MOUNT2|sshfs %PARAM %DESTINATION_DIR %FOREGROUND,
-
-" FtpMount
-filetype *.ftp
-       \ {Mount with curlftpfs}
-       \ FUSE_MOUNT2|curlftpfs -o ftp_port=-,,disable_eprt %PARAM %DESTINATION_DIR %FOREGROUND,
-
-" Fuse7z and 7z archives
-filetype {*.7z},<application/x-7z-compressed>
-       \ {Mount with fuse-7z}
-       \ FUSE_MOUNT|fuse-7z %SOURCE_FILE %DESTINATION_DIR,
-fileviewer {*.7z},<application/x-7z-compressed> 7z l %c
-
 " Office files
-filextype {*.odt,*.doc,*.docx,*.xls,*.xlsx,*.odp,*.pptx,*.ppt},
+filextype {*.odt,*.doc,*.docx,*.ods,*.xls,*.xlsx,*.odp,*.pptx,*.ppt},
          \<application/vnd.openxmlformats-officedocument.*,
           \application/msword,
           \application/vnd.ms-excel>
         \ libreoffice %f &
 fileviewer {*.odt},<application/msword> pandoc -f odt -t markdown %c
-fileviewer {*.doc},<application/msword> catdoc %c
-fileviewer {*.docx},
-          \<application/
-           \vnd.openxmlformats-officedocument.wordprocessingml.document>
-         \ docx2txt.pl %f -
-
-" TuDu files
-filetype *.tudu tudu -f %c
-
-" Qt projects
-filextype *.pro qtcreator %f &
+fileviewer {*.doc},<application/msword> pandoc -f doc -t markdown %c
+fileviewer {*.docx},<application/msword> pandoc -f docx -t markdown %c
 
 " Directories
 filextype */

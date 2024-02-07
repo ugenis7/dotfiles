@@ -98,6 +98,9 @@ au BufEnter *.tex nnoremap <F6> :!mupdf %:r.pdf &<Enter>
 set autoindent
 
 " NvimR ------------------------------------------------------------------------
+let R_external_term = 'kitty --config ~/dotfiles/kitty/r.conf'
+let Rout_more_colors = 1
+
 let R_auto_start=2			" Auto start when R file is open
 
 let R_start_libs = 'base,stats,graphics,grDevices,utils,methods,tidyverse,lubridate'
@@ -113,9 +116,6 @@ let R_openpdf = 1
 let R_openhtml = 2
 
 let R_hi_fun_paren = 1
-
-let R_external_term = 'kitty --config ~/dotfiles/kitty/r.conf'
-let Rout_more_colors = 1
 
 " Linting ----------------------------------------------------------------------
 let g:syntastic_enable_r_lintr_checker = 1

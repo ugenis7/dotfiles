@@ -15,7 +15,7 @@ Plugin 'dhruvasagar/vim-table-mode'     " Tables in Markdown
 Plugin 'frazrepo/vim-rainbow'
 Plugin 'godlygeek/tabular'		" For aligning in tabs
 Plugin 'jalvesaq/Nvim-R'		" For using R inside nvim
-Plugin 'jalvesaq/zotcite'		" Citing with Zotero
+"Plugin 'jalvesaq/zotcite'		" Citing with Zotero
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'lervag/vimtex'			" Better support for latex
 Plugin 'preservim/nerdtree'		" More complex file manager
@@ -98,7 +98,7 @@ au BufEnter *.tex nnoremap <F6> :!mupdf %:r.pdf &<Enter>
 set autoindent
 
 " NvimR ------------------------------------------------------------------------
-"let R_external_term = 'kitty --config ~/dotfiles/kitty/r.conf'
+let R_external_term = 'kitty --start-as=maximized --config ~/dotfiles/kitty/r.conf'
 "let Rout_more_colors = 1
 
 let R_auto_start=2			" Auto start when R file is open

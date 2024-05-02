@@ -1,10 +1,8 @@
 #!/bin/env bash
 
 sudo dnf install \
-	ffmpeg \
 	mediainfo \
 	nfoview \
-	gimp \
 	inkscape \
 	ImageMagick
 

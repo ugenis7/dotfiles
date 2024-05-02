@@ -11,7 +11,7 @@
 " If you would like to use another vi clone such as Elvis or Vile
 " you will need to change this setting.
 
-set vicmd=kitty\ --start-as=fullscreen\ nvim\ 2>/dev/null\ &
+set vicmd=kitty\ --start-as=maximized\ nvim\ 2>/dev/null\ &
 " set vicmd=elvis\ -G\ termcap
 " set vicmd=vile
 
@@ -117,6 +117,7 @@ set statusline="%20d %15s %A"
 
 " :mark mark /full/directory/path [filename]
 
+mark 0 ~
 mark n ~/Nextcloud
 mark p ~/Nextcloud/proyectos
 mark l ~/Nextcloud/libros

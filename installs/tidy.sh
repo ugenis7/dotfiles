@@ -15,7 +15,6 @@ sudo dnf install \
 	proj \
 	proj-devel \
 	sqlite-devel \
-	sqlite3-dbf \
 	udunits2-devel \
 	udunits2-devel \
 	unixODBC-devel

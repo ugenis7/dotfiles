@@ -20,7 +20,7 @@ snippet yamldoc
 ---
 title: "${1:Título}"
 author: "${2:Dr. Ulises Genis Cuevas}"
-fontsize: 11pt
+fontsize: 12pt
 mainfont: "Encode Sans"
 mathfont: "TeX Gyre Pagella Math"
 linestretch: 1.15
@@ -39,14 +39,27 @@ title: "${1:Título}"
 author: "${2:Dr. Ulises Genis Cuevas}"
 lang: "es-MX"
 aspectratio: 169
-theme: Boadilla
-innertheme: rectangles
+theme: "boadilla"
+colortheme: "beaver"
+innertheme: "rectangles"
 mainfont: "Encode Sans"
 mathfont: "TeX Gyre Pagella Math"
 fontsize: 14pt
 ---
 
 # $0
+endsnippet
+
+snippet yamlcolores
+header-includes:
+- \definecolor{guinda}{RGB}{171, 0, 51}
+- \definecolor{dorado}{RGB}{188, 149, 92}
+- \definecolor{doradoclaro}{RGB}{221, 201, 163}
+- \definecolor{gris}{RGB}{84, 86, 90}
+- \newcommand\guinda[1]{\textcolor{guinda}{\textbf{#1}}}
+- \newcommand\dorado[1]{\textcolor{dorado}{\textbf{#1}}}
+- \newcommand\doradoclaro[1]{\textcolor{doradoclaro}{\textbf{#1}}}
+- \newcommand\gris[1]{\textcolor{gris}{\textbf{#1}}}
 endsnippet
 
 snippet huge

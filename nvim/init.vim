@@ -10,14 +10,12 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim' 		" This plugin manager
 Plugin 'SirVer/ultisnips' 		" For code snippets
 Plugin 'chrisbra/csv.vim'		" For viewing csv files
-Plugin 'chriskempson/base16-vim'	" Better colors
 Plugin 'dhruvasagar/vim-table-mode'     " Tables in Markdown
-Plugin 'frazrepo/vim-rainbow'
 Plugin 'godlygeek/tabular'		" For aligning in tabs
 Plugin 'jalvesaq/Nvim-R'		" For using R inside nvim
-"Plugin 'jalvesaq/zotcite'		" Citing with Zotero
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'lervag/vimtex'			" Better support for latex
+Plugin 'jalvesaq/zotcite'		" Citing with Zotero
+Plugin 'jiangmiao/auto-pairs'		" Automatically complete pairs
+Plugin 'folke/tokyonight.nvim'		" Colorscheme
 Plugin 'preservim/nerdtree'		" More complex file manager
 Plugin 'scrooloose/syntastic'		" For style linting
 Plugin 'tpope/vim-fugitive'		" Git integration
@@ -39,7 +37,7 @@ set spelllang=es
 set backspace=indent,eol,start 		" Make backspace behave normally
 
 set termguicolors
-colorscheme base16-material-darker
+colorscheme tokyonight-storm
 
 nmap <S-Insert> "+gP			" Paste clipboard
 vmap <S-Del> "+y
@@ -50,8 +48,7 @@ set scrolloff=3		 	 	" Always have lines below
 set colorcolumn=80			" Highlight the 80th column
 
 let g:airline_powerline_fonts = 1 	" Pretty airline
-let g:airline#extensions#wordcount#filetypes = 'tex\|pandoc'
-let g:airline_theme='base16_material_darker'
+let g:airline#extensions#wordcount#filetypes = 'pandoc'
 let g:airline#extensions#tabline#enabled = 1
 
 " Search -----------------------------------------------------------------------
@@ -99,11 +96,9 @@ set autoindent
 
 " NvimR ------------------------------------------------------------------------
 let R_external_term = 'kitty --start-as=maximized --config ~/dotfiles/kitty/r.conf'
-"let Rout_more_colors = 1
+let R_silent_term = 1 " No mostrar errores de kitty"
 
 let R_auto_start=2			" Auto start when R file is open
-
-let R_start_libs = 'base,stats,graphics,grDevices,utils,methods,tidyverse,lubridate'
 
 let R_assign = 0			" Manual <- assignment
 
@@ -111,23 +106,17 @@ let R_indent_commented = 0
 let R_args = ['--no-save', '--quiet']
 let R_clear_line = 1
 
-let R_pdfviewer = 'evince'
+let R_pdfviewer = 'okular'
 let R_openpdf = 1
 let R_openhtml = 2
 
-let R_hi_fun_paren = 1
+let R_hi_fun_paren = 1 "Solo iluminar funciones con paréntesis
 
 " Linting ----------------------------------------------------------------------
 let g:syntastic_enable_r_lintr_checker = 1
 let g:syntastic_r_checkers = ['lintr']
 
 let g:syntastic_r_lintr_linters = "with_defaults(no_tab_linter = NULL)"
-
-" Vimtex
-let g:tex_flavor='latex'
-let g:vimtex_quickfix_mode=0
-set conceallevel=1
-let g:tex_conceal='abdmg'
 
 " Table Mode
 let g:table_mode_corner='|'
@@ -140,4 +129,3 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "my_snippets"]
-" let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips', '/dotfiles/my_snippets']

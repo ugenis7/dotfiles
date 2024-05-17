@@ -19,7 +19,10 @@ FILES_TO_COMPARE=(
     "$DOTFILES_REPO/my_snippets/rmarkdown.snippets:$HOME_DIR/.vim/bundle/ultisnips/my_snippets/rmarkdown.snippets"
     "$DOTFILES_REPO/my_snippets/rmd.snippets:$HOME_DIR/.vim/bundle/ultisnips/my_snippets/rmd.snippets"
     "$DOTFILES_REPO/my_snippets/r.snippets:$HOME_DIR/.vim/bundle/ultisnips/my_snippets/r.snippets"
+    "$DOTFILES_REPO/vifm/vifmrc:$HOME_DIR/.config/vifm/vifmrc"
 )
+
+
 
 # Loop through the list of files
 for file_pair in "${FILES_TO_COMPARE[@]}"; do

@@ -121,6 +121,7 @@ mark 0 ~/Nextcloud
 mark p ~/Nextcloud/proyectos
 mark l ~/Nextcloud/libros
 mark d ~/dotfiles
+mark t /tmp
 
 " ------------------------------------------------------------------------------
 
@@ -295,6 +296,11 @@ filextype */
 " Displaying pictures in terminal
 "
 " fileviewer *.jpg,*.png shellpic %c
+
+fileviewer *.md highlight -O xterm256 --syntax markdown --style=base16/nord
+fileviewer *.Rmd highlight -O xterm256 --syntax markdown --style=base16/nord
+fileviewer *.sh highlight -O xterm256 --syntax bash --style=base16/nord
+fileviewer *.R highlight -O xterm256 --syntax r --style=base16/nord
 
 " Open all other files with default system programs (you can also remove all
 " :file[x]type commands above to ensure they don't interfere with system-wide

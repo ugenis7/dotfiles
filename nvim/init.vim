@@ -1,4 +1,4 @@
-set nocompatible              		" We want the latest vim settings   
+set nocompatible              		" We want the latest vim settings
 
 " Vundle list
 filetype off
@@ -30,7 +30,7 @@ filetype plugin indent on
 
 " Visuals ----------------------------------------------------------------------
 syntax enable
-set number 
+set number
 set relativenumber
 set spelllang=es
 
@@ -92,7 +92,7 @@ au BufEnter *.tex setlocal fo=awtq tw=80
 au BufEnter *.tex nnoremap <F5> :!xelatex % %:r.pdf<Enter>
 au BufEnter *.tex nnoremap <F6> :!mupdf %:r.pdf &<Enter>
 
-" Indentation ----------------------------------------------------------------- 
+" Indentation -----------------------------------------------------------------
 
 set tabstop=8
 set expandtab
@@ -119,6 +119,15 @@ let R_hi_fun_paren = 1 "Solo iluminar funciones con paréntesis
 
 " Linting ----------------------------------------------------------------------
 let g:airline#extensions#ale#enabled = 1
+
+let g:ale_linter_aliases = {'pandoc': 'markdown'}
+
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\}
+
+let g:ale_fix_on_save = 1
+
 
 " Table Mode
 let g:table_mode_corner='|'

@@ -17,13 +17,13 @@ Plugin 'jalvesaq/zotcite'		" Citing with Zotero
 Plugin 'jiangmiao/auto-pairs'		" Automatically complete pairs
 Plugin 'folke/tokyonight.nvim'		" Colorscheme
 Plugin 'preservim/nerdtree'		" More complex file manager
-Plugin 'scrooloose/syntastic'		" For style linting
 Plugin 'tpope/vim-fugitive'		" Git integration
 Plugin 'tpope/vim-surround'		" For surrounding text
 Plugin 'vim-airline/vim-airline'	" The powerline
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'vim-pandoc/vim-pandoc'		" for integration with pandoc
 Plugin 'vim-pandoc/vim-pandoc-syntax'	" For syntax checking
+Plugin 'dense-analysis/ale' 		" For linting
 
 call vundle#end()
 filetype plugin indent on
@@ -92,6 +92,11 @@ au BufEnter *.tex setlocal fo=awtq tw=80
 au BufEnter *.tex nnoremap <F5> :!xelatex % %:r.pdf<Enter>
 au BufEnter *.tex nnoremap <F6> :!mupdf %:r.pdf &<Enter>
 
+" Indentation ----------------------------------------------------------------- 
+
+set tabstop=8
+set expandtab
+set shiftwidth=2  " indenting is 2 spaces
 set autoindent
 
 " NvimR ------------------------------------------------------------------------
@@ -113,10 +118,7 @@ let R_openhtml = 2
 let R_hi_fun_paren = 1 "Solo iluminar funciones con paréntesis
 
 " Linting ----------------------------------------------------------------------
-let g:syntastic_enable_r_lintr_checker = 1
-let g:syntastic_r_checkers = ['lintr']
-
-let g:syntastic_r_lintr_linters = "with_defaults(no_tab_linter = NULL)"
+let g:airline#extensions#ale#enabled = 1
 
 " Table Mode
 let g:table_mode_corner='|'
@@ -130,4 +132,7 @@ let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "my_snippets"]
 
+" Pandoc
 let g:pandoc#formatting#equalprg='' " Ignore = in Rmd files
+
+let r_indent_align_args = 0

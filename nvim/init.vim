@@ -128,6 +128,10 @@ let g:ale_fixers = {
 
 let g:ale_fix_on_save = 1
 
+let r_indent_align_args = 0
+
+let g:ale_markdown_markdownlint_options='--disable MD025'
+
 
 " Table Mode
 let g:table_mode_corner='|'
@@ -143,5 +147,3 @@ let g:UltiSnipsSnippetDirectories=["UltiSnips", "my_snippets"]
 
 " Pandoc
 let g:pandoc#formatting#equalprg='' " Ignore = in Rmd files
-
-let r_indent_align_args = 0

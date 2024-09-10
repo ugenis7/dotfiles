@@ -19,9 +19,10 @@ endsnippet
 snippet yamldoc
 ---
 title: "${1:Título}"
-author: "${2:Dr. Ulises Genis Cuevas}"
+subtitle: "${2:Materia}"
+author: "${3:Dr. Ulises Genis Cuevas}"
 fontsize: 12pt
-mainfont: "Encode Sans"
+mainfont: "TeX Gyre Pagella"
 mathfont: "TeX Gyre Pagella Math"
 linestretch: 1.15
 lang: "es-MX"
@@ -67,16 +68,18 @@ snippet huge
 \begin{center}
 \huge{${1:Texto}}
 \end{center}
+
+$0
 endsnippet
 
 snippet * "italics"
-*${1:${VISUAL}}*$0
+*${1:${VISUAL}}* $0
 endsnippet
 
 snippet ** "bold"
-**${1:${VISUAL}}**$0
+**${1:${VISUAL}}** $0
 endsnippet
 
 snippet *** "bolditalics"
-***${1:${VISUAL}}***$0
+***${1:${VISUAL}}*** $0
 endsnippet

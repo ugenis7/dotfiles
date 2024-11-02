@@ -202,6 +202,8 @@ filextype {*.pdf},<application/pdf>
 	\ mupdf %c &,
 	\ {Open in Evince} 
 	\ evince %c &,
+	\ {Open in Okular} 
+	\ okular %c &,
 fileviewer {*.pdf},<application/pdf> pdftotext -nopgbrk %c -
 
 " Audio
@@ -276,6 +278,14 @@ filetype {*.zip,*.jar,*.war,*.ear,*.oxt,*.apkg},
        \ {View contents}
        \ zip -sf %c | less,
 fileviewer *.zip,*.jar,*.war,*.ear,*.oxt zip -sf %c
+
+" CSV files
+filetype {*.csv},
+        \<csv>
+        \{open in libreoffice}
+        \libreoffice %c &,
+        \{open in neovim}
+        \nvim %c &,
 
 " Office files
 filextype {*.odt,*.doc,*.docx,*.ods,*.xls,*.xlsx,*.odp,*.pptx,*.ppt},
@@ -361,11 +371,6 @@ nnoremap S :sort<cr>
 nnoremap w :view<cr>
 vnoremap w :view<cr>gv
 
-" Open file in existing instance of gvim
-nnoremap o :!gvim --remote-tab-silent %f<cr>
-" Open file in new instance of gvim
-nnoremap O :!gvim %f<cr>
-
 " Open file in the background using its default program
 nnoremap gb :file &<cr>l
 
@@ -396,6 +401,8 @@ nnoremap A cw
 
 " Open console in current directory
 nnoremap ,t :!kitty &<cr>
+nnoremap ,o :file okular %c &,<cr>
+nnoremap ,l :file libreoffice %c &,<cr>
 
 " Open editor to edit vifmrc and apply settings after returning to vifm
 nnoremap ,c :write | edit $MYVIFMRC | restart full<cr>

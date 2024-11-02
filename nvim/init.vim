@@ -7,23 +7,27 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-Plugin 'VundleVim/Vundle.vim' 		" This plugin manager
 Plugin 'SirVer/ultisnips' 		" For code snippets
+Plugin 'VundleVim/Vundle.vim' 		" This plugin manager
 Plugin 'chrisbra/csv.vim'		" For viewing csv files
+Plugin 'dense-analysis/ale' 		" For linting
 Plugin 'dhruvasagar/vim-table-mode'     " Tables in Markdown
-Plugin 'godlygeek/tabular'		" For aligning in tabs
-Plugin 'jalvesaq/Nvim-R'		" For using R inside nvim
-Plugin 'jalvesaq/zotcite'		" Citing with Zotero
-Plugin 'jiangmiao/auto-pairs'		" Automatically complete pairs
 Plugin 'folke/tokyonight.nvim'		" Colorscheme
+Plugin 'godlygeek/tabular'		" For aligning in tabs
+Plugin 'hrsh7th/nvim-cmp'
+Plugin 'jalvesaq/Nvim-R'		" For using R inside nvim
+Plugin 'jalvesaq/zotcite'		" For references with zotero
+Plugin 'jiangmiao/auto-pairs'		" Automatically complete pairs
 Plugin 'preservim/nerdtree'		" More complex file manager
 Plugin 'tpope/vim-fugitive'		" Git integration
 Plugin 'tpope/vim-surround'		" For surrounding text
 Plugin 'vim-airline/vim-airline'	" The powerline
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'vim-pandoc/vim-pandoc'		" for integration with pandoc
-Plugin 'vim-pandoc/vim-pandoc-syntax'	" For syntax checking
-Plugin 'dense-analysis/ale' 		" For linting
+Plugin 'vim-pandoc/vim-pandoc'
+Plugin 'vim-pandoc/vim-pandoc-syntax'
+Plugin 'nvim-telescope/telescope.nvim'
+Plugin 'nvim-treesitter/nvim-treesitter'
+Plugin 'nvim-lua/plenary.nvim'
 
 call vundle#end()
 filetype plugin indent on

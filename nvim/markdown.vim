@@ -14,3 +14,8 @@ nmap <F7> :Pandoc! odt -f markdown
 			\ --citeproc 
 			\ --csl ~/dotfiles/pandoc-templates/apa.csl
 			\ --reference-doc=~/dotfiles/pandoc-templates/coltam.odt<CR><CR>
+
+nmap <F8> :Pandoc! pdf -f markdown 
+			\ -F ~/.vim/bundle/zotcite/python3/zotref.py 
+			\ --citeproc 
+			\ --csl ~/dotfiles/pandoc-templates/apa.csl<CR><CR>

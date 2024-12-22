@@ -5,7 +5,7 @@ let g:pandoc#folding#fold_yaml = 1
 
 nmap <F5> :Pandoc! pdf -f markdown<CR><CR>
 
-nmap <F6> :Pandoc! beamer -i --pdf-engine=xelatex<CR><CR>
+nmap <F6> :Pandoc! beamer --pdf-engine=xelatex --incremental<CR><CR>
 
 " Texto según COLTAM
 

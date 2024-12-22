@@ -115,7 +115,7 @@ let R_indent_commented = 0
 let R_args = ['--no-save', '--quiet']
 let R_clear_line = 1
 
-let R_pdfviewer = 'okular'
+let R_pdfviewer = 'evince'
 let R_openpdf = 1
 let R_openhtml = 2
 

@@ -17,7 +17,6 @@ tema <- ggplot2::theme_minimal(
     legend.position = "top"
   )
 
-
 knitr::opts_chunk$set(
   echo = FALSE,
   fig.align = "center",

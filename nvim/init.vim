@@ -7,27 +7,22 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-Plugin 'SirVer/ultisnips' 		" For code snippets
-Plugin 'VundleVim/Vundle.vim' 		" This plugin manager
 Plugin 'chrisbra/csv.vim'		" For viewing csv files
 Plugin 'dense-analysis/ale' 		" For linting
 Plugin 'dhruvasagar/vim-table-mode'     " Tables in Markdown
 Plugin 'folke/tokyonight.nvim'		" Colorscheme
 Plugin 'godlygeek/tabular'		" For aligning in tabs
-Plugin 'hrsh7th/nvim-cmp'
 Plugin 'jalvesaq/Nvim-R'		" For using R inside nvim
-Plugin 'jalvesaq/zotcite'		" For references with zotero
 Plugin 'jiangmiao/auto-pairs'		" Automatically complete pairs
 Plugin 'preservim/nerdtree'		" More complex file manager
+Plugin 'SirVer/ultisnips' 		" For code snippets
 Plugin 'tpope/vim-fugitive'		" Git integration
 Plugin 'tpope/vim-surround'		" For surrounding text
 Plugin 'vim-airline/vim-airline'	" The powerline
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'vim-pandoc/vim-pandoc'
-Plugin 'vim-pandoc/vim-pandoc-syntax'
-Plugin 'nvim-telescope/telescope.nvim'
-Plugin 'nvim-treesitter/nvim-treesitter'
-Plugin 'nvim-lua/plenary.nvim'
+Plugin 'vim-airline/vim-airline-themes' " Themes for the powerline
+Plugin 'vim-pandoc/vim-pandoc'          " For exporting documents
+Plugin 'vim-pandoc/vim-pandoc-syntax'   " For syntax highlighting
+Plugin 'VundleVim/Vundle.vim' 		" This plugin manager
 
 call vundle#end()
 filetype plugin indent on
@@ -47,7 +42,7 @@ nmap <S-Insert> "+gP			" Paste clipboard
 vmap <S-Del> "+y
 
 set cursorline 			 	" Highlight the current line
-set cursorcolumn
+set cursorcolumn                        " Highlight the current column
 set scrolloff=3		 	 	" Always have lines below
 set colorcolumn=80			" Highlight the 80th column
 
@@ -73,6 +68,7 @@ nnoremap <leader>1 :b1<CR> 			" Go to main buffer
 nnoremap <C-t> :enew<CR>			" New buffer
 nnoremap <C-q> :bd<CR>				" Close buffer
 nnoremap <space> za				" Toggle folds
+nnoremap - :Explore<CR>
 
 nmap <F9> :make<cr>
 

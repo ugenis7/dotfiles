@@ -12,3 +12,4 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 alias ll='ls --color=auto -gGhX --group-directories-first --time-style=long-iso'
 alias bashrc='nvim ~/dotfiles/bashrc'
+alias seed='ssh ugenis7@server913.seedhost.eu'

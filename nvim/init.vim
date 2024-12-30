@@ -1,5 +1,3 @@
-set nocompatible              		" We want the latest vim settings
-
 " Vundle list
 filetype off
 
@@ -32,14 +30,13 @@ syntax enable
 set number
 set relativenumber
 set spelllang=es
-
-set backspace=indent,eol,start 		" Make backspace behave normally
+set showtabline=1                       " Show tabs when multiple tabs are open
 
 set termguicolors
 colorscheme tokyonight-storm
 
-nmap <S-Insert> "+gP			" Paste clipboard
-vmap <S-Del> "+y
+nnoremap <S-Insert> "+gP			" Paste clipboard
+vnoremap <S-Del> "+y
 
 set cursorline 			 	" Highlight the current line
 set cursorcolumn                        " Highlight the current column
@@ -48,7 +45,6 @@ set colorcolumn=80			" Highlight the 80th column
 
 let g:airline_powerline_fonts = 1 	" Pretty airline
 let g:airline#extensions#wordcount#filetypes = 'pandoc'
-let g:airline#extensions#tabline#enabled = 1
 
 " Search -----------------------------------------------------------------------
 set hlsearch
@@ -75,6 +71,11 @@ nmap <F9> :make<cr>
 nnoremap <C-n> :tabnext<CR>			" Next tab
 nnoremap <C-p> :tabprev<CR>			" Previous tab
 nnoremap <C-e> :NERDTreeToggle<CR>
+
+nnoremap <C-f> <C-f>zz                          " Navigation centered
+nnoremap <C-b> <C-b>zz
+nnoremap n nzzzv
+nnoremap N Nzzzv
 
 " Autocommands -----------------------------------------------------------------
 augroup autosourcing			" Automatically source the vimrc

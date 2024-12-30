@@ -13,16 +13,8 @@ FILES_TO_COMPARE=(
     "$DOTFILES_REPO/mpv/input.conf:$HOME_DIR/.config/mpv/input.conf"
     "$DOTFILES_REPO/mpv/mplayer-input.conf:$HOME_DIR/.config/mpv/mplayer-input.conf"
     "$DOTFILES_REPO/mpv/mpv.conf:$HOME_DIR/.config/mpv/mpv.conf"
-    "$DOTFILES_REPO/my_snippets/all.snippets:$HOME_DIR/.vim/bundle/ultisnips/my_snippets/all.snippets"
-    "$DOTFILES_REPO/my_snippets/markdown.snippets:$HOME_DIR/.vim/bundle/ultisnips/my_snippets/markdown.snippets"
-    "$DOTFILES_REPO/my_snippets/pandoc.snippets:$HOME_DIR/.vim/bundle/ultisnips/my_snippets/pandoc.snippets"
-    "$DOTFILES_REPO/my_snippets/rmarkdown.snippets:$HOME_DIR/.vim/bundle/ultisnips/my_snippets/rmarkdown.snippets"
-    "$DOTFILES_REPO/my_snippets/rmd.snippets:$HOME_DIR/.vim/bundle/ultisnips/my_snippets/rmd.snippets"
-    "$DOTFILES_REPO/my_snippets/r.snippets:$HOME_DIR/.vim/bundle/ultisnips/my_snippets/r.snippets"
     "$DOTFILES_REPO/vifm/vifmrc:$HOME_DIR/.config/vifm/vifmrc"
 )
-
-
 
 # Loop through the list of files
 for file_pair in "${FILES_TO_COMPARE[@]}"; do

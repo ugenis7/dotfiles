@@ -116,7 +116,6 @@ require("lazy").setup({
     {"dhruvasagar/vim-table-mode"},
     {"godlygeek/tabular"},
     {"jalvesaq/Nvim-R"},
-    {"jamespeapen/Nvim-R"},
     {"jiangmiao/auto-pairs"},
     {"preservim/nerdtree"},
     {"tpope/vim-fugitive"},
@@ -147,11 +146,6 @@ vim.g.R_openpdf = 1
 vim.g.R_openhtml = 2
 vim.g.R_hi_fun_paren = 1  -- Solo iluminar funciones con paréntesis
 
---- Airline Configuration ------------------------------------------------------
-vim.g.airline_powerline_fonts = 1 -- Enable Powerline fonts for Airline
-vim.g["airline#extensions#wordcount#filetypes"] = "pandoc" -- Enable wordcount
-vim.g.airline_extensions_ale_enabled = 1
-
 --- Ale config
 vim.g.ale_linter_aliases = {pandoc = 'markdown'}
 vim.g.ale_fixers = {['*'] = {'remove_trailing_lines'}}
@@ -163,7 +157,14 @@ vim.g.ale_markdown_markdownlint_options = '--disable MD025'
 vim.g.table_mode_corner = '|'
 
 --- Netrw
-vim.g.netrw_bufsettings = "noma nomod nonu nobl nowrap ro rnu"
+-- noma: no mappings
+-- nomod: no modifications
+-- nonu: no numbers
+-- nobl: no buffer list
+-- nowrap: no wrapping long filenames
+-- ro: read-only
+-- rnu: relative number
+vim.g.netrw_bufsettings = "noma nomod nobl nowrap ro rnu"
 
 --- Ultisnips
 vim.g.UltiSnipsExpandTrigger = "<tab>"
@@ -174,32 +175,14 @@ vim.g.UltiSnipsSnippetDirectories = {"~/dotfiles/my_snippets/"}
 --- Pandoc
 vim.g.pandoc_formatting_equalprg = ''  -- Ignore = in Rmd files
 
+--- Airline Configuration ------------------------------------------------------
+vim.g.airline_powerline_fonts = 1
+vim.g["airline#extensions#wordcount#filetypes"] = "pandoc" -- Enable wordcount
+vim.g.airline_extensions_ale_enabled = 1
+
 -- Ensure the airline_symbols table exists
 vim.g.airline_symbols = vim.g.airline_symbols or {}
 
--- Unicode symbols
-vim.g.airline_left_sep = '»'
-vim.g.airline_left_sep = '▶'
-vim.g.airline_right_sep = '«'
-vim.g.airline_right_sep = '◀'
-
-vim.g.airline_symbols.colnr = ' ℅:'
-vim.g.airline_symbols.crypt = '🔒'
-vim.g.airline_symbols.linenr = '☰'
-vim.g.airline_symbols.linenr = ' ␊:'
-vim.g.airline_symbols.linenr = ' ␤:'
-vim.g.airline_symbols.linenr = '¶'
-vim.g.airline_symbols.maxlinenr = '㏑'
-vim.g.airline_symbols.branch = '⎇'
-vim.g.airline_symbols.paste = 'ρ'
-vim.g.airline_symbols.paste = 'Þ'
-vim.g.airline_symbols.paste = '∥'
-vim.g.airline_symbols.spell = 'Ꞩ'
-vim.g.airline_symbols.notexists = 'Ɇ'
-vim.g.airline_symbols.notexists = '∄'
-vim.g.airline_symbols.whitespace = 'Ξ'
-
--- Powerline symbols
 vim.g.airline_left_sep = ''
 vim.g.airline_left_alt_sep = ''
 vim.g.airline_right_sep = ''
@@ -209,4 +192,6 @@ vim.g.airline_symbols.colnr = ' ℅:'
 vim.g.airline_symbols.readonly = ''
 vim.g.airline_symbols.linenr = ' :'
 vim.g.airline_symbols.maxlinenr = '☰ '
-vim.g.airline_symbols.dirty = '⚡'
+vim.g.airline_symbols.dirty='⚡'
+
+vim.g["airline#extensions#branch#enabled"] = 1

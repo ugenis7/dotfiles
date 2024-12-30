@@ -13,7 +13,7 @@ FILES_TO_COMPARE=(
     "$DOTFILES_REPO/mpv/input.conf:$HOME_DIR/.config/mpv/input.conf"
     "$DOTFILES_REPO/mpv/mplayer-input.conf:$HOME_DIR/.config/mpv/mplayer-input.conf"
     "$DOTFILES_REPO/mpv/mpv.conf:$HOME_DIR/.config/mpv/mpv.conf"
-    "$DOTFILES_REPO/vifm/vifmrc:$HOME_DIR/.config/vifm/vifmrc"
+    "$DOTFILES_REPO/vifm/vifmrc:$HOME_DIR/.vifm/vifmrc"
 )
 
 # Loop through the list of files

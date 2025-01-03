@@ -41,12 +41,12 @@ map("n", "<leader><space>", ":nohlsearch<CR>", opts) -- Clear highlight
 map("n", "<leader>ev", ":tabedit ~/dotfiles/nvim/init.lua<CR>", opts)
 
 -- Navigation
+vim.opt.showtabline = 1 -- Show the tabline only when multiple tabs are open
 map("n", "<C-Tab>", ":bn<CR>", opts)        -- Next buffer
 map("n", "<C-S-Tab>", ":bp<CR>", opts)      -- Previous buffer
 map("n", "<leader>1", ":b1<CR>", opts)      -- Go to the first buffer
 map("n", "<C-t>", ":enew<CR>", opts)        -- Open a new buffer
 map("n", "<C-q>", ":bd<CR>", opts)          -- Close the current buffer
-vim.opt.showtabline = 1 -- Show the tabline only when multiple tabs are open
 map("n", "<C-e>", ":NERDTreeToggle<CR>", opts) -- Toggle NERDTree
 map("n", "<C-f>", "<C-f>zz", opts)          -- Center screen after scrolling forward
 map("n", "<C-b>", "<C-b>zz", opts)          -- Center screen after scrolling backward
@@ -59,7 +59,7 @@ map("n", "<F9>", ":make<CR>", opts)         -- Run the make command
 -- File specific Config -------------------------------------------------------
 --- Markdown-specific settings
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = "markdown,rmd,pandoc",
+    pattern = "markdown,pandoc",
     callback = function()
         -- Set local formatting options
         vim.opt_local.formatoptions = "awtq" -- Auto-wrap text intelligently
@@ -120,10 +120,12 @@ require("lazy").setup({
     {"preservim/nerdtree"},
     {"tpope/vim-fugitive"},
     {"tpope/vim-surround"},
-    {"vim-airline/vim-airline"},
-    {"vim-airline/vim-airline-themes"},
     {"vim-pandoc/vim-pandoc"},
     {"vim-pandoc/vim-pandoc-syntax"},
+    {
+      'nvim-lualine/lualine.nvim',
+      dependencies = { 'nvim-tree/nvim-web-devicons' }
+    }
   },
   -- Configure any other settings here. See the documentation for more details.
   -- colorscheme that will be used when installing plugins.
@@ -175,23 +177,45 @@ vim.g.UltiSnipsSnippetDirectories = {"~/dotfiles/my_snippets/"}
 --- Pandoc
 vim.g.pandoc_formatting_equalprg = ''  -- Ignore = in Rmd files
 
---- Airline Configuration ------------------------------------------------------
-vim.g.airline_powerline_fonts = 1
-vim.g["airline#extensions#wordcount#filetypes"] = "pandoc" -- Enable wordcount
-vim.g.airline_extensions_ale_enabled = 1
-
--- Ensure the airline_symbols table exists
-vim.g.airline_symbols = vim.g.airline_symbols or {}
-
-vim.g.airline_left_sep = ''
-vim.g.airline_left_alt_sep = ''
-vim.g.airline_right_sep = ''
-vim.g.airline_right_alt_sep = ''
-vim.g.airline_symbols.branch = ''
-vim.g.airline_symbols.colnr = ' ℅:'
-vim.g.airline_symbols.readonly = ''
-vim.g.airline_symbols.linenr = ' :'
-vim.g.airline_symbols.maxlinenr = '☰ '
-vim.g.airline_symbols.dirty='⚡'
-
-vim.g["airline#extensions#branch#enabled"] = 1
+--- lualine setup
+require('lualine').setup {
+  options = {
+    icons_enabled = true,
+    theme = 'powerline_dark',
+    component_separators = { left = '', right = ''},
+    section_separators = { left = '', right = ''},
+    disabled_filetypes = {
+      statusline = {},
+      winbar = {},
+    },
+    ignore_focus = {},
+    always_divide_middle = true,
+    always_show_tabline = true,
+    globalstatus = false,
+    refresh = {
+      statusline = 100,
+      tabline = 100,
+      winbar = 100,
+    }
+  },
+  sections = {
+    lualine_a = {'mode'},
+    lualine_b = {'branch', 'diff', 'diagnostics'},
+    lualine_c = {'filename'},
+    lualine_x = {'encoding', 'fileformat', 'filetype'},
+    lualine_y = {'progress'},
+    lualine_z = {'location'}
+  },
+  inactive_sections = {
+    lualine_a = {},
+    lualine_b = {},
+    lualine_c = {'filename'},
+    lualine_x = {'location'},
+    lualine_y = {},
+    lualine_z = {}
+  },
+  tabline = {},
+  winbar = {},
+  inactive_winbar = {},
+  extensions = {}
+}

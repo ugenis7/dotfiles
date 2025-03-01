@@ -14,6 +14,11 @@ vim.opt.number = true            -- Show line numbers
 vim.opt.relativenumber = true    -- Show relative line numbers
 vim.opt.spelllang = "es"         -- Set the spell check language to Spanish
 
+-- Word counting
+local function getWords()
+  return tostring(vim.fn.wordcount().words)
+end
+
 -- Key mappings for clipboard
 vim.keymap.set("n", "<S-Insert>", '"+gP', { noremap = true, silent = true }) -- Paste from the system clipboard
 vim.keymap.set("v", "<S-Del>", '"+y', { noremap = true, silent = true })    -- Copy to the system clipboard
@@ -70,7 +75,7 @@ vim.api.nvim_create_autocmd("FileType", {
 
         -- Key mappings for Pandoc commands
         vim.keymap.set("n", "<F5>", ":Pandoc! pdf --citeproc<CR><CR>", { noremap = true, silent = true, buffer = true })
-        vim.keymap.set("n", "<F6>", ":Pandoc! beamer --incremental --pdf-engine=xelatex --citeproc<CR><CR>", { noremap = true, silent = false, buffer = true })
+        vim.keymap.set("n", "<F6>", ":Pandoc! beamer --incremental=true --pdf-engine=xelatex --citeproc<CR><CR>", { noremap = true, silent = false, buffer = true })
         vim.keymap.set("n", "<F7>", ":Pandoc! odt --citeproc --reference-doc=~/dotfiles/pandoc-templates/referencia.odt<CR><CR>", { noremap = true, silent = true, buffer = true })
     end
 })
@@ -169,9 +174,9 @@ vim.g.table_mode_corner = '|'
 vim.g.netrw_bufsettings = "noma nomod nobl nowrap ro rnu"
 
 --- Ultisnips
-vim.g.UltiSnipsExpandTrigger = "<tab>"
-vim.g.UltiSnipsJumpForwardTrigger = "<tab>"
-vim.g.UltiSnipsJumpBackwardTrigger = "<s-tab>"
+vim.g.UltiSnipsExpandTrigger = "<Tab>"
+vim.g.UltiSnipsJumpForwardTrigger = "<Tab>"
+vim.g.UltiSnipsJumpBackwardTrigger = "<s-Tab>"
 vim.g.UltiSnipsSnippetDirectories = {"~/dotfiles/my_snippets/"}
 
 --- Pandoc
@@ -202,7 +207,7 @@ require('lualine').setup {
     lualine_a = {'mode'},
     lualine_b = {'branch', 'diff', 'diagnostics'},
     lualine_c = {'filename'},
-    lualine_x = {'encoding', 'fileformat', 'filetype'},
+    lualine_x = {'filetype', getWords},
     lualine_y = {'progress'},
     lualine_z = {'location'}
   },

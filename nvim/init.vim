@@ -6,7 +6,6 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'chrisbra/csv.vim'		" For viewing csv files
-Plugin 'dense-analysis/ale' 		" For linting
 Plugin 'dhruvasagar/vim-table-mode'     " Tables in Markdown
 Plugin 'folke/tokyonight.nvim'		" Colorscheme
 Plugin 'godlygeek/tabular'		" For aligning in tabs
@@ -72,11 +71,6 @@ nnoremap <C-n> :tabnext<CR>			" Next tab
 nnoremap <C-p> :tabprev<CR>			" Previous tab
 nnoremap <C-e> :NERDTreeToggle<CR>
 
-nnoremap <C-f> <C-f>zz                          " Navigation centered
-nnoremap <C-b> <C-b>zz
-nnoremap n nzzzv
-nnoremap N Nzzzv
-
 " Autocommands -----------------------------------------------------------------
 augroup autosourcing			" Automatically source the vimrc
 	autocmd!
@@ -101,7 +95,7 @@ set shiftwidth=2  " indenting is 2 spaces
 set autoindent
 
 " NvimR ------------------------------------------------------------------------
-let R_external_term = 'kitty --start-as=maximized --config ~/dotfiles/kitty/r.conf'
+"let R_external_term = 'kitty --start-as=maximized --config ~/dotfiles/kitty/r.conf'
 let R_silent_term = 1 " No mostrar errores de kitty"
 
 let R_auto_start=2			" Auto start when R file is open
@@ -133,7 +127,6 @@ let r_indent_align_args = 0
 
 let g:ale_markdown_markdownlint_options='--disable MD025'
 
-
 " Table Mode
 let g:table_mode_corner='|'
 
@@ -144,7 +137,7 @@ let g:netrw_bufsettings="noma nomod nonu nobl nowrap ro rnu"
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-let g:UltiSnipsSnippetDirectories=["UltiSnips", "my_snippets"]
+let g:UltiSnipsSnippetDirectories=["~/dotfiles/my_snippets/"]
 
 " Pandoc
 let g:pandoc#formatting#equalprg='' " Ignore = in Rmd files

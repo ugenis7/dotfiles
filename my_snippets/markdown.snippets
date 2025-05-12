@@ -83,3 +83,37 @@ endsnippet
 snippet *** "bolditalics"
 ***${1:${VISUAL}}*** $0
 endsnippet
+
+snippet yamlreporte
+---
+title: "${1:Título}"
+subtitle: "${2:Subtítulo}"
+author:
+- "Dr. Ulises Víctor Jesús Genis Cuevas"
+- "*Universidad Autónoma de Coahuila*"
+date: "\\\\today"
+mainfont: "Times New Roman"
+fontsize: 12pt
+linestretch: 1.5
+lang: "es-MX"
+geometry:
+- letterpaper
+- margin=2.5cm
+abstract: "${3:Abstract}
+
+\n
+
+*Palabras clave*: ${4:Palabras clave}"
+pagestyle: "headings"
+toc: "true"
+toc-depth: "3"
+include-before: "\\\\newpage"
+documentclass: "report"
+bibliography: "${4:Bibliografía}"
+csl: "/home/ugenis7/dotfiles/pandoc-templates/apa.csl"
+---
+
+\newpage
+
+# Introducción
+endsnippet

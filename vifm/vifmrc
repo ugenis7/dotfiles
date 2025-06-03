@@ -131,13 +131,13 @@ let &statusline .= " %d "        " file modification date and time
 
 " :mark mark /full/directory/path [filename]
 
-mark h ~/
-mark 0 ~/Nextcloud/
-mark p ~/Nextcloud/proyectos/
-mark m ~/Nextcloud/materias/
-mark n ~/Nextcloud/notas/
-mark l ~/Nextcloud/libros/
+mark 0 ~/
+mark p ~/proyectos-activos/
+mark m ~/materias/
+mark n ~/notas/
+mark l ~/libros/
 mark d ~/dotfiles/
+mark a ~/articulos/
 mark t /tmp
 
 " ------------------------------------------------------------------------------

@@ -7,9 +7,8 @@ call vundle#begin()
 
 Plugin 'chrisbra/csv.vim'		" For viewing csv files
 Plugin 'dhruvasagar/vim-table-mode'     " Tables in Markdown
-Plugin 'folke/tokyonight.nvim'		" Colorscheme
 Plugin 'godlygeek/tabular'		" For aligning in tabs
-Plugin 'jalvesaq/Nvim-R'		" For using R inside nvim
+Plugin 'jalvesaq/Vim-R'		" For using R inside nvim
 Plugin 'jiangmiao/auto-pairs'		" Automatically complete pairs
 Plugin 'preservim/nerdtree'		" More complex file manager
 Plugin 'SirVer/ultisnips' 		" For code snippets
@@ -20,6 +19,10 @@ Plugin 'vim-airline/vim-airline-themes' " Themes for the powerline
 Plugin 'vim-pandoc/vim-pandoc'          " For exporting documents
 Plugin 'vim-pandoc/vim-pandoc-syntax'   " For syntax highlighting
 Plugin 'VundleVim/Vundle.vim' 		" This plugin manager
+Plugin 'nordtheme/vim'                  " Nord colorscheme
+Plugin 'dense-analysis/ale'
+Plugin 'junegunn/goyo.vim'
+Plugin 'junegunn/limelight.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -28,11 +31,11 @@ filetype plugin indent on
 syntax enable
 set number
 set relativenumber
-set spelllang=es
+set spelllang=es_mx
 set showtabline=1                       " Show tabs when multiple tabs are open
 
 set termguicolors
-colorscheme tokyonight-storm
+colorscheme nord
 
 nnoremap <S-Insert> "+gP			" Paste clipboard
 vnoremap <S-Del> "+y
@@ -95,7 +98,12 @@ set shiftwidth=2  " indenting is 2 spaces
 set autoindent
 
 " NvimR ------------------------------------------------------------------------
-"let R_external_term = 'kitty --start-as=maximized --config ~/dotfiles/kitty/r.conf'
+if $TMUX != ""
+  let R_external_term = 'tmux split-window -h -p 50'
+else
+  let R_external_term = 'kitty --start-as=maximized --config ~/dotfiles/kitty/r.conf'
+endif
+
 let R_silent_term = 1 " No mostrar errores de kitty"
 
 let R_auto_start=2			" Auto start when R file is open
@@ -115,17 +123,45 @@ let R_hi_fun_paren = 1 "Solo iluminar funciones con paréntesis
 " Linting ----------------------------------------------------------------------
 let g:airline#extensions#ale#enabled = 1
 
+let g:ale_lint_on_save = 1
+let g:ale_lint_on_enter = 1
+
 let g:ale_linter_aliases = {'pandoc': 'markdown'}
 
 let g:ale_fixers = {
-\   '*': ['remove_trailing_lines'],
+\   'markdown': ['prettier','remove_trailing_lines'],
+\   'pandoc': ['prettier','remove_trailing_lines'],
+\}
+
+let g:ale_linters = {
+\   'markdown': ['markdownlint'],
+\   'pandoc': ['markdownlint'],
+\}
+
+let g:ale_prettier_options = {
+\   '--print-width': '80',
+\   '--prose-wrap': 'always',
 \}
 
 let g:ale_fix_on_save = 1
 
+let g:ale_sign_error = '✖'
+let g:ale_sign_warning = '⚠'
+
+let g:ale_set_loclist = 1
+
 let r_indent_align_args = 0
 
-let g:ale_markdown_markdownlint_options='--disable MD025'
+let g:ale_markdown_markdownlint_options = '--config ' . expand('~') . '/dotfiles/nvim/markdownlint.json'
+
+let g:ale_disable_lsp = {'markdown': 1}
+
+let g:ale_statusline_format = ['✖ %d', '⚠ %d', '✔ OK']
+
+let g:ale_r_lintr_options = 'use_lintr(type = "tidyverse")'
+
+nmap <silent> ]g <Plug>(ale_next_wrap)
+nmap <silent> [g <Plug>(ale_previous_wrap)
 
 " Table Mode
 let g:table_mode_corner='|'

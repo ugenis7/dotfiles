@@ -34,6 +34,9 @@ set relativenumber
 set spelllang=es_mx
 set showtabline=1                       " Show tabs when multiple tabs are open
 
+nnoremap <F2> :set paste<CR>"+p:set nopaste<CR>
+inoremap <F2> <Esc>:set paste<CR>"+p:set nopaste<CR>A
+
 set termguicolors
 colorscheme nord
 

@@ -1,8 +1,11 @@
-setlocal fo=awtq tw=80
+setlocal fo=tqn tw=80 formatoptions-=r comments=b:>,b:-
+
 let g:pandoc#folding#fold_yaml = 1
 
-" Presentación de Beamer
+nnoremap Q gqap
+vnoremap Q gq
 
+" Presentación de Beamer
 
 nmap <F5> :Pandoc! pdf -f markdown --citeproc<CR><CR>
 

@@ -1,9 +1,12 @@
 snippet link
-[${1:${VISUAL:Texto}}](${2:Liga})$0
+[${1:${VISUAL:Texto}}](${2:Liga})
+
+$0
 endsnippet
 
 snippet img
 ![${1:Texto}](${2:Ubicación})
+
 $0
 endsnippet
 
@@ -27,8 +30,11 @@ mathfont: "TeX Gyre Pagella Math"
 linestretch: 1.15
 lang: "es-MX"
 geometry:
-- letterpaper
-- margin=2cm
+  - letterpaper
+  - margin=2cm
+header-includes:
+  - \definecolor{rojo}{RGB}{219, 77, 56}
+  - \newcommand\rojo[1]{\textcolor{rojo}{\textbf{#1}}}
 ---
 
 # $0
@@ -38,7 +44,7 @@ snippet yamldiapos
 ---
 title: "${1:Título}"
 subtitle: "${2:Materia}"
-author: "${3:Dr. Ulises Genis Cuevas}"
+author: "Dr. Ulises Genis Cuevas"
 lang: "es-MX"
 aspectratio: 169
 theme: "Boadilla"
@@ -46,22 +52,22 @@ colortheme: "whale"
 innertheme: "rectangles"
 mainfont: "TeX Gyre Pagella"
 mathfont: "TeX Gyre Pagella Math"
-fontsize: ${4:12pt}
+fontsize: 12pt
+header-includes:
+  - \definecolor{rojo}{RGB}{219, 77, 56}
+  - \newcommand\rojo[1]{\textcolor{rojo}{\textbf{#1}}}
 ---
 
 # $0
 endsnippet
 
 snippet yamlcolores
-header-includes:
-- \definecolor{azul}{RGB}{0, 127, 226}
-- \definecolor{verde}{RGB}{0, 151, 72}
-- \definecolor{rojo}{RGB}{219, 77, 56}
-- \definecolor{gris}{RGB}{165, 171, 189}
-- \newcommand\azul[1]{\textcolor{azul}{\textbf{#1}}}
-- \newcommand\verde[1]{\textcolor{verde}{\textbf{#1}}}
-- \newcommand\rojo[1]{\textcolor{rojo}{\textbf{#1}}}
-- \newcommand\gris[1]{\textcolor{gris}{\textbf{#1}}}
+  - \definecolor{azul}{RGB}{0, 127, 226}
+  - \definecolor{verde}{RGB}{0, 151, 72}
+  - \definecolor{gris}{RGB}{165, 171, 189}
+  - \newcommand\azul[1]{\textcolor{azul}{\textbf{#1}}}
+  - \newcommand\verde[1]{\textcolor{verde}{\textbf{#1}}}
+  - \newcommand\gris[1]{\textcolor{gris}{\textbf{#1}}}
 endsnippet
 
 snippet huge
@@ -89,16 +95,16 @@ snippet yamlreporte
 title: "${1:Título}"
 subtitle: "${2:Subtítulo}"
 author:
-- "Dr. Ulises Víctor Jesús Genis Cuevas"
-- "*Universidad Autónoma de Coahuila*"
+  - "Dr. Ulises Víctor Jesús Genis Cuevas"
+  - "*Universidad Autónoma de Coahuila*"
 date: "\\\\today"
-mainfont: "Times New Roman"
-fontsize: 12pt
-linestretch: 1.5
+mainfont: "TeX Gyre Pagella"
+fontsize: 10pt
+linestretch: 1.15
 lang: "es-MX"
 geometry:
-- letterpaper
-- margin=2.5cm
+  - letterpaper
+  - margin=2.5cm
 abstract: "${3:Abstract}
 
 \n
@@ -109,11 +115,10 @@ toc: "true"
 toc-depth: "3"
 include-before: "\\\\newpage"
 documentclass: "report"
-bibliography: "${4:Bibliografía}"
+bibliography: "${5:Bibliografía}"
 csl: "/home/ugenis7/dotfiles/pandoc-templates/apa.csl"
 ---
 
 \newpage
-
-# Introducción
+$0
 endsnippet

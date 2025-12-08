@@ -141,11 +141,6 @@ let g:ale_linters = {
 \   'pandoc': ['markdownlint'],
 \}
 
-let g:ale_prettier_options = {
-\   '--print-width': '80',
-\   '--prose-wrap': 'always',
-\}
-
 let g:ale_fix_on_save = 1
 
 let g:ale_sign_error = '✖'
@@ -180,3 +175,10 @@ let g:UltiSnipsSnippetDirectories=["~/dotfiles/my_snippets/"]
 
 " Pandoc
 let g:pandoc#formatting#equalprg='' " Ignore = in Rmd files
+
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
+nmap <Leader>g :Goyo<CR>
+let g:goyo_width=90
+let g:goyo_height=30
+

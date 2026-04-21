@@ -40,6 +40,9 @@ inoremap <F2> <Esc>:set paste<CR>"+p:set nopaste<CR>A
 set termguicolors
 colorscheme nord
 
+" Para codificar el shift del y lo comprenda alacritty
+execute "set <S-Del>=\e[3;2~"
+
 nnoremap <S-Insert> "+gP			" Paste clipboard
 vnoremap <S-Del> "+y
 
@@ -63,8 +66,10 @@ nmap <leader>ev :tabedit ~/dotfiles/nvim/init.vim<cr> " Edit this file
 
 nnoremap <silent> <leader><space> :nohlsearch<cr> " Stop highlighting a search
 
-nnoremap <C-Tab> :bn<CR>                        " Switching across buffers
-nnoremap <C-S-Tab> :bp<CR>                      " Switching across buffers
+"nnoremap <C-Tab> :bn<CR>                        " Switching across buffers
+"nnoremap <C-S-Tab> :bp<CR>                      " Switching across buffers
+nnoremap <Esc>[9;5u :bn<CR>
+nnoremap <Esc>[9;6u :bp<CR>
 nnoremap <leader>1 :b1<CR> 			" Go to main buffer
 nnoremap <C-t> :enew<CR>			" New buffer
 nnoremap <C-q> :bd<CR>				" Close buffer
@@ -95,7 +100,7 @@ au BufEnter *.tex nnoremap <F6> :!mupdf %:r.pdf &<Enter>
 
 " Indentation -----------------------------------------------------------------
 
-set tabstop=8
+set tabstop=2
 set expandtab
 set shiftwidth=2  " indenting is 2 spaces
 set autoindent
@@ -104,7 +109,7 @@ set autoindent
 if $TMUX != ""
   let R_external_term = 'tmux split-window -h -p 50'
 else
-  let R_external_term = 'kitty --start-as=maximized --config ~/dotfiles/kitty/r.conf'
+  let R_external_term = 'alacritty'
 endif
 
 let R_silent_term = 1 " No mostrar errores de kitty"

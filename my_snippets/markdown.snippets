@@ -37,7 +37,7 @@ header-includes:
   - \newcommand\rojo[1]{\textcolor{rojo}{\textbf{#1}}}
 ---
 
-# $0
+$0
 endsnippet
 
 snippet yamldiapos
@@ -54,11 +54,12 @@ mainfont: "TeX Gyre Pagella"
 mathfont: "TeX Gyre Pagella Math"
 fontsize: 12pt
 header-includes:
+  - \date{}
   - \definecolor{rojo}{RGB}{219, 77, 56}
   - \newcommand\rojo[1]{\textcolor{rojo}{\textbf{#1}}}
 ---
 
-# $0
+$0
 endsnippet
 
 snippet yamlcolores
@@ -120,5 +121,29 @@ csl: "/home/ugenis7/dotfiles/pandoc-templates/apa.csl"
 ---
 
 \newpage
+
+$0
+endsnippet
+
+snippet yamlrepaso
+---
+title: "${1:Título}"
+subtitle: "${2:Materia}"
+author: "Dr. Ulises Genis Cuevas"
+fontsize: 10pt
+mainfont: "TeX Gyre Pagella"
+mathfont: "TeX Gyre Pagella Math"
+linestretch: 1
+lang: "es-MX"
+classoption: "twocolumn"
+geometry:
+  - letterpaper
+  - margin=1cm
+header-includes:
+  - \raggedright
+  - \definecolor{rojo}{RGB}{219, 77, 56}
+  - \newcommand\rojo[1]{\textcolor{rojo}{\textbf{#1}}}
+---
+
 $0
 endsnippet

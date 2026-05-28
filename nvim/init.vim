@@ -23,6 +23,8 @@ Plugin 'nordtheme/vim'                  " Nord colorscheme
 Plugin 'dense-analysis/ale'
 Plugin 'junegunn/goyo.vim'
 Plugin 'junegunn/limelight.vim'
+Plugin 'NLKNguyen/papercolor-theme'
+Plugin 'altercation/vim-colors-solarized'
 
 call vundle#end()
 filetype plugin indent on
@@ -37,8 +39,10 @@ set showtabline=1                       " Show tabs when multiple tabs are open
 nnoremap <F2> :set paste<CR>"+p:set nopaste<CR>
 inoremap <F2> <Esc>:set paste<CR>"+p:set nopaste<CR>A
 
-set termguicolors
-colorscheme nord
+set t_Co=256   " This is may or may not needed.
+
+set background=light
+colorscheme PaperColor
 
 " Para codificar el shift del y lo comprenda alacritty
 execute "set <S-Del>=\e[3;2~"

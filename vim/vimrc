@@ -66,7 +66,7 @@ set incsearch
 let mapleader=","
 let maplocalleader = ','
 
-nmap <leader>ev :tabedit ~/dotfiles/nvim/init.vim<cr> " Edit this file
+nmap <leader>ev :tabedit ~/dotfiles/vim/vimrc<cr> " Edit this file
 
 nnoremap <silent> <leader><space> :nohlsearch<cr> " Stop highlighting a search
 
@@ -86,15 +86,21 @@ nnoremap <C-n> :tabnext<CR>			" Next tab
 nnoremap <C-p> :tabprev<CR>			" Previous tab
 nnoremap <C-e> :NERDTreeToggle<CR>
 
+" Navegación rápida entre ventanas (splits)
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
 " Autocommands -----------------------------------------------------------------
 augroup autosourcing			" Automatically source the vimrc
 	autocmd!
-	autocmd BufWritePost ~/dotfiles/nvim/init.vim source %
+	autocmd BufWritePost ~/dotfiles/vim/vimrc source %
 augroup END
 
-au BufEnter *.md source ~/dotfiles/nvim/markdown.vim
-au BufEnter *.Rmd source ~/dotfiles/nvim/markdown.vim
-au BufEnter *.R source ~/dotfiles/nvim/rfiles.vim
+au BufEnter *.md source ~/dotfiles/vim/markdown.vim
+au BufEnter *.Rmd source ~/dotfiles/vim/markdown.vim
+au BufEnter *.R source ~/dotfiles/vim/rfiles.vim
 
 au BufEnter *.txt setlocal fo=awtq tw=80
 
@@ -103,6 +109,11 @@ au BufEnter *.tex nnoremap <F5> :!xelatex % %:r.pdf<Enter>
 au BufEnter *.tex nnoremap <F6> :!mupdf %:r.pdf &<Enter>
 
 " Indentation -----------------------------------------------------------------
+set list    "Caracteres invisibles
+
+" Definir los caracteres: añade la línea vertical y el espacio
+" Nota: Usa la barra vertical estándar '|' o un carácter unicode como '│' o '┆'
+set listchars=tab:\»\ ,leadmultispace:\¦\ ,trail:·
 
 set tabstop=2
 set expandtab
@@ -159,7 +170,7 @@ let g:ale_set_loclist = 1
 
 let r_indent_align_args = 0
 
-let g:ale_markdown_markdownlint_options = '--config ' . expand('~') . '/dotfiles/nvim/markdownlint.json'
+let g:ale_markdown_markdownlint_options = '--config ' . expand('~') . '/dotfiles/vim/markdownlint.json'
 
 let g:ale_disable_lsp = {'markdown': 1}
 
